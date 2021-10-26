@@ -1,0 +1,205 @@
+.footer-page {
+
+  display: grid;
+
+  grid-template-rows: 368px 80px;
+
+
+
+  background: linear-gradient(157.42deg, #2E2C2D 0%, #27262B 98.49%);
+}
+
+.footer-page__info {
+  margin: 40px 40px 65px 40px;
+  display: grid;
+  grid-template-columns: 3fr 2fr 2fr 1fr;
+  height: 283px;
+}
+
+.footer-page__links {
+  margin-left: 40px;
+  margin-right: 40px;
+  border-top: 1px solid #353E47;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-page__links-text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #FCFCFD;
+}
+
+.footer-page__icons {
+  width: 156px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+//email
+.footer-page__email {
+  margin-right: 184px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.footer-page__email-head {
+  margin-bottom: 28px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  /* identical to box height */
+
+
+  /* Off White */
+
+  color: #FCFCFD;
+
+}
+
+.footer-page__email-info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  height: inherit;
+}
+
+.footer-page__email-info-email {
+  margin-bottom: 28px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+  /* identical to box height */
+
+
+  /* Off White */
+
+  color: #FCFCFD;
+}
+
+.footer-page__email-info-contact {
+  margin-bottom: 123px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-page__email-info-policy>a {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  /* identical to box height, or 129% */
+
+
+  /* Off White */
+
+  color: #FCFCFD;
+}
+
+//products
+.footer-page__products-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+
+}
+
+.footer-page__products-text>a {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #FCFCFD;
+}
+
+.footer-page__products-head {
+  margin-bottom: 36px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 21px;
+  /* identical to box height */
+
+
+  /* Off White */
+
+  color: #FCFCFD;
+}
+
+// services
+.footer-page__services-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+
+}
+
+.footer-page__services-text>a {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #FCFCFD;
+}
+
+.footer-page__services-head {
+  margin-bottom: 36px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 21px;
+  /* identical to box height */
+
+
+  /* Off White */
+
+  color: #FCFCFD;
+}
+
+// about
+.footer-page__about-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+
+}
+
+.footer-page__about-text>a {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: #FCFCFD;
+}
+
+.footer-page__about-head {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 21px;
+  margin-bottom: 36px;
+  color: #FCFCFD;
+}

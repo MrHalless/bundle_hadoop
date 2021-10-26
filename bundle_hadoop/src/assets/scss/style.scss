@@ -1,0 +1,52 @@
+// @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+// @mixin font($font_name, $file_name, $weight, $style) {
+
+//   @font-face {
+//     font-family: $font_name;
+//     font-display: swap;
+//     src: url("../fonts/#{$file_name}.woff") format("woff"),
+//     url("../fonts/#{$file_name}.woff2") format("woff2");
+//     font-weight: #{$weight};
+//     font-style: #{$style};
+//   }
+// }
+@import "blocks/bootstrap.scss";
+@import "fonts/f.scss";
+@import "vars";
+@import "vendor/reset";
+
+
+
+body {
+  background-color: #212121;
+  font-family: "DMSans";
+}
+
+
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+
+}
+
+a {
+  text-decoration: none
+}
+
+/* Blocks */
+@import "blocks/page";
+@import "blocks/header";
+@import "blocks/nav";
+@import "blocks/subnav";
+@import "blocks/search";
+@import "blocks/sidebar";
+@import "blocks/main";
+@import "blocks/container";
+@import "blocks/profile";
+@import "blocks/social";
+@import "blocks/btn";
+@import "blocks/footer-page";
+@import "blocks/social-media.scss"
+// @import "../../../node_modules/jquery/dist/jquery.min.js"

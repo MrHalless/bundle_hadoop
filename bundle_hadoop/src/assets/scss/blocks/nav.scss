@@ -1,0 +1,160 @@
+.nav {
+  background: $nav;
+  position: absolute;
+  height: 72px;
+  left: 0%;
+  right: 0%;
+  top: 0px;
+
+  display: grid;
+  grid-template-columns: 200px 1fr 100px;
+  justify-items: stretch;
+  align-items: center;
+  // justify-content: space-between;
+
+}
+
+
+.nav__list {
+  display: flex;
+  height: 70px;
+  margin-left: 93px;
+  justify-items: center;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 40px;
+
+}
+
+.nav__item {
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //     &:hover {
+  //         .nav__text {
+  //             color: $green;
+  //         }
+
+  //         >.subnav {
+  //             display: block;
+  //         }
+  //     }
+}
+
+
+
+.nav__icon {
+  text-decoration: none;
+  margin-left: 40px;
+}
+
+.nav__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #FFFFFF;
+
+  &:hover {
+    .nav__link-text {
+      color: $green;
+      cursor: pointer;
+    }
+  }
+}
+
+.nav__link-text {
+  margin-right: 10px;
+}
+
+.nav__mode {
+  margin-right: 24px;
+}
+
+.icon-sun {
+  margin-right: 12px;
+}
+
+.dropdown {
+  position: relative;
+  // display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 235px;
+  height: 289px;
+  left: -24px;
+  top: 70px;
+  background: linear-gradient(157.42deg, rgba(46, 44, 45, 0.9) 0%, rgba(39, 38, 43, 0.9) 98.49%);
+
+  flex-direction: column;
+  padding: 12px;
+  border: 1px solid #353E47;
+  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  z-index: 1;
+
+}
+
+
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+
+}
+
+.dropdown:hover .dropbtn .rrr {
+  color: $green;
+}
+
+
+// .nav__item {
+//     position: relative;
+
+//     &:hover {
+//         .nav__text {
+//             color: $green;
+//         }
+
+//         >.subnav {
+//             display: block;
+//         }
+//     }
+// }
+
+// .nav__link {
+//     display: block;
+//     padding: 1.35rem;
+
+//     // font-size: 1.1rem;
+//     // line-height: 1.2;
+//     // text-transform: uppercase;
+//     color: $white;
+//     text-decoration: none;
+
+//     transition: background-color .2s linear;
+
+//     &.has-subnav {
+//         position: relative;
+//         padding-right: 3.5rem;
+
+//         &:after {
+//             content: "";
+//             display: block;
+//             margin-top: 2px;
+
+//             border-style: solid;
+//             border-width: 6px 5px 0 5px;
+//             border-color: $white transparent transparent transparent;
+
+//             position: absolute;
+//             top: 50%;
+//             right: 1.35rem;
+//             transform: translateY(-50%);
+//         }
+//     }
+// }

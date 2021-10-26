@@ -1,0 +1,29 @@
+// .page {
+//     overflow: hidden;
+// }
+.page {
+    display: grid;
+    grid-template-columns: 307px 1fr;
+    grid-template-rows: 72px 1fr 468px;
+    grid-template-areas:
+        "header header"
+        "main main"
+        "footer footer"
+    ;
+}
+
+header {
+    grid-area: header;
+}
+
+aside {
+    grid-area: aside;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}

@@ -1,0 +1,68 @@
+// .btn {
+//     display: inline-block;
+//     vertical-align: top;
+//     padding: 1.12em 2.1em;
+
+//     background: $secondary;
+//     border: none;
+//     cursor: pointer;
+//     border-radius: 3em;
+
+//     font-family: inherit;
+//     font-size: 1.2rem;
+//     line-height: 1.1;
+//     font-weight: 500;
+//     color: $white;
+//     text-decoration: none;
+
+//     transition: background-color .2s linear;
+
+//     &--red {
+//         background-color: $red;
+//         box-shadow: 0 7px 17px -10px rgba($red, .3);
+
+//         &:hover {
+//             background-color: darken($red, 5%);
+//         }
+//     }
+
+//     &--blue {
+//         background-color: $blue;
+//         box-shadow: 0 7px 17px -10px rgba($blue, .3);
+
+//         &:hover {
+//             background-color: darken($blue, 5%);
+//         }
+//     }
+// }
+
+.btn_ {
+    padding: 9px 24px;
+
+    // position: static;
+    width: 148px;
+    height: 38px;
+    left: 816px;
+    top: 0px;
+
+    /* Green Saturated */
+
+    background: #00D2A0;
+    box-shadow: 0px 8px 20px rgba(0, 37, 92, 0.2);
+    border-radius: 5px;
+}
+
+.btn-outline_ {
+    padding: 9px 24px;
+    height: 38px;
+    width: 174px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    text-decoration: none;
+    color: #00D2A0;
+    border: 1px solid #00D2A0;
+    border-radius: 5px;
+
+}
