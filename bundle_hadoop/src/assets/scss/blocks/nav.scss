@@ -42,6 +42,25 @@
   //     }
 }
 
+.nav__link-button {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 20px;
+  /* identical to box height */
+
+  text-align: center;
+
+  /* Dark 1 */
+
+  color: #353E47;
+
+  margin-right: 9px;
+}
+
+.nav__link-button:hover {
+  text-decoration: none;
+}
 
 
 .nav__icon {
@@ -58,10 +77,15 @@
 
   &:hover {
     .nav__link-text {
-      color: $green;
+      color: $green !important;
       cursor: pointer;
+
     }
   }
+}
+
+.nav__link:hover {
+  text-decoration: none;
 }
 
 .nav__link-text {
@@ -107,7 +131,7 @@
 
 }
 
-.dropdown:hover .dropbtn .rrr {
+.dropdown:hover .dropbtn .drp {
   color: $green;
 }
 

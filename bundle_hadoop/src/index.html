@@ -2,6 +2,435 @@
 layout: default
 title: Arenadata
 ---
+<div class="head-presentation">
+  <div class="presenation">
+    <div class="presentation-info">
+      <div class="presentation-info__title">Arenadata Documentation</div>
+      <div class="presentation-info__info">Our passion is to build efficient flexible solutions that scale up to dozens
+        of petabytes</div>
+    </div>
+    <div class="presentation-example">
+      <div class="presentation-example__commands">
+        <pre><code class="language-sql">
+        use adb;
+        create table myclass(
+        id int(4) not null primary key,
+        name varchar(20) not null,
+        degree double(16,2)
+        );
+        </code></pre>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="search">
+  <div class="search-input">
+    <div class="search-input__block">
+      <input type="text" placeholder="Search for guides, commands and more...">
+      <div class="search-input__icon">
+        <button class="button_search">
+          <img src="assets/images/search_icon.svg" alt="" srcset="">
+        </button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="blocks-card">
+  <div class="blocks-card-title-one">
+    <div class="blocks-card__title">
+      Data storage software
+    </div>
+  </div>
+  <div class="blocks-card-components">
+    <div class="blocks-card-components-card">
+      <div class="blocks-card-components-card-title">
+        <div class="blocks-card-components-card-title__icon">
+          <img src="assets/images/adh.svg" alt="" srcset="">
+        </div>
+      </div>
+      <div class="blocks-card-components-card-body">
+        <div class="blocks-card-components-card-body__title">
+          Arenadata Hadoop
+        </div>
+        <div class="blocks-card-components-card-body__text">
+          Arenadata Hadoop (ADH) is a full-fledged enterprise distribution package based on Apache Hadoop and designed
+          for storing and processing semi-structured and unstructured data.
+        </div>
+      </div>
+    </div>
+    <div class="blocks-card-components-card">
+      <div class="blocks-card-components-card-title">
+        <div class="blocks-card-components-card-title__icon">
+          <img src="assets/images/adb.svg" alt="" srcset="">
+        </div>
+      </div>
+      <div class="blocks-card-components-card-body">
+        <div class="blocks-card-components-card-body__title">
+          Arenadata Database
+        </div>
+        <div class="blocks-card-components-card-body__text">
+          Reliable and scalable enterprise data storage using massively parallel processing and built on Open Source
+          Greenplum DBMS, keeping pace with your business growth. ADB is designed to store, process, and analyze large
+          amounts of structured and semi-structured data.
+        </div>
+      </div>
+    </div>
+    <div class="blocks-card-components-card">
+      <div class="blocks-card-components-card-title">
+        <div class="blocks-card-components-card-title__icon">
+          <img src="assets/images/adg.svg" alt="" srcset="">
+        </div>
+      </div>
+      <div class="blocks-card-components-card-body">
+        <div class="blocks-card-components-card-body__title">
+          Arenadata Grid
+        </div>
+        <div class="blocks-card-components-card-body__text">
+          Arenadata Grid (ADG), developed jointly with Mail.Ru and based on Tarantool technology, is a distributed
+          in-memory computing system enabling real-time data processing as part of the unified enterprise data platform.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="blocks-card-title-two">
+    <div class="blocks-card__title">
+      Data streaming and processing software
+    </div>
+  </div>
+  <div class="blocks-card-components">
+    <div class="blocks-card-components-card">
+      <div class="blocks-card-components-card-title">
+        <div class="blocks-card-components-card-title__icon">
+          <img src="assets/images/ads.svg" alt="" srcset="">
+        </div>
+      </div>
+      <div class="blocks-card-components-card-body">
+        <div class="blocks-card-components-card-body__title">
+          Arenadata Streaming
+        </div>
+        <div class="blocks-card-components-card-body__text">
+          Arenadata Streaming (ADS) is a scalable, fault-tolerant solution for real-time streaming data processing,
+          adapted for enterprise and built on Apache Kafka and Apache Nifi.
+        </div>
+      </div>
+    </div>
+    <div class="blocks-card-components-card">
+      <div class="blocks-card-components-card-title">
+        <div class="blocks-card-components-card-title__icon">
+          <img src="assets/images/adqm.svg" alt="" srcset="">
+        </div>
+      </div>
+      <div class="blocks-card-components-card-body">
+        <div class="blocks-card-components-card-body__title">
+          Arenadata QuickMarts
+        </div>
+        <div class="blocks-card-components-card-body__text">
+          If you need to promptly analyze large data volumes while also reducing the load of your data storage system,
+          Arenadata Quickmarts (ADQM) is a perfect solution for you.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="topics">
+  <div class="topics__title">
+    Popular topics
+  </div>
+  <div class="topics-block">
+    <div class="topics-block-nav list-group " id="list-tab" role="tablist">
+      <a class="topics-block-nav__button active" id="list-hadoop-list" data-toggle="list" href="#list-hadoop" role="tab"
+        aria-controls="list-hadoop">AD Hadoop</a>
+      <a class="topics-block-nav__button " id="list-database-list" data-toggle="list" href="#list-database" role="tab"
+        aria-controls="list-database">AD Database</a>
+      <a class="topics-block-nav__button " id="list-grid-list" data-toggle="list" href="#list-grid" role="tab"
+        aria-controls="list-grid">AD Grid</a>
+      <a class="topics-block-nav__button" id="list-streaming-list" data-toggle="list" href="#list-streaming" role="tab"
+        aria-controls="list-streaming">AD Streaming</a>
+      <a class="topics-block-nav__button" id="list-quickmarts-list" data-toggle="list" href="#list-quickmarts"
+        role="tab" aria-controls="list-quickmarts">AD QuickMarts</a>
+      <a class="topics-block-nav__button" id="list-commandcenter-list" data-toggle="list" href="#list-commandcenter"
+        role="tab" aria-controls="list-commandcenter">AD Command
+        Center</a>
+    </div>
+  </div>
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="list-hadoop" role="tabpanel" aria-labelledby="list-hadoop-list">
+      <div class="topics-block-content">
+        <div class="topics-block-content-info">
+          <div class="topics-block-content-info__title">Get started with Arenadata Hadoop</div>
+          <div class="topics-block-content-info__content">Reliable and scalable enterprise data storage using massively
+            parallel processing and built on Open Source Greenplum DBMS, keeping pace with your business growth. ADB is
+            designed to store, process, and analyze large amounts of structured and semi-structured data.</div>
+          <div class="topics-block-content-info__read"><a href="#">READ MORE</a></div>
+        </div>
+        <div class="topics-block-content-article">
+          <div class="topics-block-content-article__title">Popular articles</div>
+          <div class="topics-block-content-article-content">
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Installation</a>
+            </div>
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Database objects</a>
+            </div>
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Querying data</a>
+            </div>
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Working with external data</a>
+            </div>
+          </div>
+        </div>
+        <div class="topics-block-content-faqs">
+          <div class="topics-block-content-faqs__title">FAQs</div>
+          <div class="topics-block-content-faqs-content">
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- database -->
+    <div class="tab-pane fade" id="list-database" role="tabpanel" aria-labelledby="list-database-list">
+      <div class="topics-block-content">
+        <div class="topics-block-content-info">
+          <div class="topics-block-content-info__title">Get started with Arenadata Database</div>
+          <div class="topics-block-content-info__content">Reliable and scalable enterprise data storage using massively
+            parallel processing and built on Open Source Greenplum DBMS, keeping pace with your business growth. ADB is
+            designed to store, process, and analyze large amounts of structured and semi-structured data.</div>
+          <div class="topics-block-content-info__read"><a href="#">READ MORE</a></div>
+        </div>
+        <div class="topics-block-content-article">
+          <div class="topics-block-content-article__title">Popular articles</div>
+          <div class="topics-block-content-article-content">
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Installation</a>
+            </div>
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Database objects</a>
+            </div>
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Querying data</a>
+            </div>
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Working with external data</a>
+            </div>
+          </div>
+        </div>
+        <div class="topics-block-content-faqs">
+          <div class="topics-block-content-faqs__title">FAQs</div>
+          <div class="topics-block-content-faqs-content">
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- grid -->
+    <div class="tab-pane fade" id="list-grid" role="tabpanel" aria-labelledby="list-grid-list">
+      <div class="topics-block-content">
+        <div class="topics-block-content-info">
+          <div class="topics-block-content-info__title">Get started with Arenadata Grid</div>
+          <div class="topics-block-content-info__content">Reliable and scalable enterprise data storage using massively
+            parallel processing and built on Open Source Greenplum DBMS, keeping pace with your business growth. ADB is
+            designed to store, process, and analyze large amounts of structured and semi-structured data.</div>
+          <div class="topics-block-content-info__read"><a href="#">READ MORE</a></div>
+        </div>
+        <div class="topics-block-content-article">
+          <div class="topics-block-content-article__title">Popular articles</div>
+          <div class="topics-block-content-article-content">
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Installation</a>
+            </div>
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Database objects</a>
+            </div>
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Querying data</a>
+            </div>
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Working with external data</a>
+            </div>
+          </div>
+        </div>
+        <div class="topics-block-content-faqs">
+          <div class="topics-block-content-faqs__title">FAQs</div>
+          <div class="topics-block-content-faqs-content">
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- streaming -->
+    <div class="tab-pane fade" id="list-streaming" role="tabpanel" aria-labelledby="list-streaming-list">
+      <div class="topics-block-content">
+        <div class="topics-block-content-info">
+          <div class="topics-block-content-info__title">Get started with Arenadata Streaming</div>
+          <div class="topics-block-content-info__content">Reliable and scalable enterprise data storage using massively
+            parallel processing and built on Open Source Greenplum DBMS, keeping pace with your business growth. ADB is
+            designed to store, process, and analyze large amounts of structured and semi-structured data.</div>
+          <div class="topics-block-content-info__read"><a href="#">READ MORE</a></div>
+        </div>
+        <div class="topics-block-content-article">
+          <div class="topics-block-content-article__title">Popular articles</div>
+          <div class="topics-block-content-article-content">
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Installation</a>
+            </div>
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Database objects</a>
+            </div>
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Querying data</a>
+            </div>
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Working with external data</a>
+            </div>
+          </div>
+        </div>
+        <div class="topics-block-content-faqs">
+          <div class="topics-block-content-faqs__title">FAQs</div>
+          <div class="topics-block-content-faqs-content">
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- quickmarts -->
+    <div class="tab-pane fade" id="list-quickmarts" role="tabpanel" aria-labelledby="list-quickmarts-list">
+      <div class="topics-block-content">
+        <div class="topics-block-content-info">
+          <div class="topics-block-content-info__title">Get started with Arenadata QuickMarts</div>
+          <div class="topics-block-content-info__content">Reliable and scalable enterprise data storage using massively
+            parallel processing and built on Open Source Greenplum DBMS, keeping pace with your business growth. ADB is
+            designed to store, process, and analyze large amounts of structured and semi-structured data.</div>
+          <div class="topics-block-content-info__read"><a href="#">READ MORE</a></div>
+        </div>
+        <div class="topics-block-content-article">
+          <div class="topics-block-content-article__title">Popular articles</div>
+          <div class="topics-block-content-article-content">
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Installation</a>
+            </div>
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Database objects</a>
+            </div>
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Querying data</a>
+            </div>
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Working with external data</a>
+            </div>
+          </div>
+        </div>
+        <div class="topics-block-content-faqs">
+          <div class="topics-block-content-faqs__title">FAQs</div>
+          <div class="topics-block-content-faqs-content">
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- commancenter -->
+    <div class="tab-pane fade" id="list-commandcenter" role="tabpanel" aria-labelledby="list-commandcenter-list">
+      <div class="topics-block-content">
+        <div class="topics-block-content-info">
+          <div class="topics-block-content-info__title">Get started with Arenadata AD Command Center</div>
+          <div class="topics-block-content-info__content">Reliable and scalable enterprise data storage using massively
+            parallel processing and built on Open Source Greenplum DBMS, keeping pace with your business growth. ADB is
+            designed to store, process, and analyze large amounts of structured and semi-structured data.</div>
+          <div class="topics-block-content-info__read"><a href="#">READ MORE</a></div>
+        </div>
+        <div class="topics-block-content-article">
+          <div class="topics-block-content-article__title">Popular articles</div>
+          <div class="topics-block-content-article-content">
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Installation</a>
+            </div>
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Database objects</a>
+            </div>
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Querying data</a>
+            </div>
+            <div class="topics-block-content-article-content__link">
+              <a href="#">Working with external data</a>
+            </div>
+          </div>
+        </div>
+        <div class="topics-block-content-faqs">
+          <div class="topics-block-content-faqs__title">FAQs</div>
+          <div class="topics-block-content-faqs-content">
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+            <div class="topics-block-content-faqs-content__link">
+              <a href="#">How do I?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="social">
   <div class="social-media">
     <div class="social-media__head">
@@ -127,13 +556,14 @@ title: Arenadata
           </div>
           <div class="collapse-hubr-card-message">
             <div class="collapse-hubr-card-message__text">
-              Hello everyone! My name is Andrey, and I work as a System Software Architect. In this arcticle I will tell
+              Hello everyone! My name is Andrey, and I work as a System Software Architect. In this arcticle I will
+              tell
               you how and why we created our own instrument for data exchange between Arenadata DB...
             </div>
           </div>
           <div class="collapse-hubr-card-link">
             <div class="collapse-hubr-card-link__text">
-              <a href="#" target="_blank" rel="noopener noreferrer">READ MORE</a>
+              <a href="#" target="_blank" rel="noopener noreferrer"><a href="#">READ MORE</a></a>
             </div>
           </div>
         </div>
@@ -159,7 +589,7 @@ title: Arenadata
           </div>
           <div class="collapse-hubr-card-link">
             <div class="collapse-hubr-card-link__text">
-              <a href="#" target="_blank" rel="noopener noreferrer">READ MORE</a>
+              <a href="#" target="_blank" rel="noopener noreferrer"><a href="#">READ MORE</a></a>
             </div>
           </div>
         </div>

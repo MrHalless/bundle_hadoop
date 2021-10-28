@@ -32,8 +32,14 @@ body {
 }
 
 a {
-  text-decoration: none
+  text-decoration: none !important;
+  color: #FFFFFF;
 }
+
+// a:active,
+// a:focus {
+//   // outline: none;
+// }
 
 /* Blocks */
 @import "blocks/page";
@@ -44,9 +50,10 @@ a {
 @import "blocks/sidebar";
 @import "blocks/main";
 @import "blocks/container";
-@import "blocks/profile";
-@import "blocks/social";
+@import "blocks/presentation.scss";
 @import "blocks/btn";
 @import "blocks/footer-page";
-@import "blocks/social-media.scss"
-// @import "../../../node_modules/jquery/dist/jquery.min.js"
+@import "blocks/social-media.scss";
+@import "blocks/popular-topic.scss";
+@import "blocks/blocks-card.scss";
+@import "blocks/highlightjs.scss";

@@ -45,3 +45,11 @@
   font-weight: 400;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "DMMono";
+  font-display: swap;
+  src: url("../fonts/DMMono-Regular") format("woff"), url("../fonts/DMMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}

@@ -1,11 +1,6 @@
 .footer-page {
-
   display: grid;
-
-  grid-template-rows: 368px 80px;
-
-
-
+  grid-template-rows: 388px 80px;
   background: linear-gradient(157.42deg, #2E2C2D 0%, #27262B 98.49%);
 }
 
@@ -20,9 +15,9 @@
   margin-left: 40px;
   margin-right: 40px;
   border-top: 1px solid #353E47;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 7fr 1fr;
+  grid-gap: 20px;
 }
 
 .footer-page__links-text {
@@ -31,10 +26,13 @@
   font-size: 14px;
   line-height: 18px;
   color: #FCFCFD;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .footer-page__icons {
-  width: 156px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -92,6 +90,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+}
+
+.footer-page__email-info-contact:hover {
+  color: $green;
 }
 
 .footer-page__email-info-policy>a {

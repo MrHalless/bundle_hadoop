@@ -137,8 +137,8 @@ function cssWatch(cb) {
 }
 function js_lib(cb) {
   return src(path.src.js_lib)
-  .pipe(dest(path.build.js))
-  .pipe(browserSync.stream())
+    .pipe(dest(path.build.js))
+    .pipe(browserSync.stream())
 }
 function js(cb) {
   return src(path.src.js, { base: srcPath + 'assets/js/' })
@@ -235,7 +235,9 @@ function watchFiles() {
   gulp.watch([path.watch.fonts], fonts);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js_lib, js, images, fonts));
+// const build = gulp.series(clean, gulp.parallel(html, css, js_lib, js, images, fonts));
+const build = gulp.series(clean, html, css, js_lib, js, images, fonts);
+// const watch = gulp.parallel(build, watchFiles, serve);
 const watch = gulp.parallel(build, watchFiles, serve);
 
 
