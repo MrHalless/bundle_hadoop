@@ -10,8 +10,9 @@
 //     font-style: #{$style};
 //   }
 // }
-@import "blocks/bootstrap.scss";
 @import "fonts/f.scss";
+@import "blocks/bootstrap.scss";
+@import "blocks/animate.scss";
 @import "vars";
 @import "vendor/reset";
 

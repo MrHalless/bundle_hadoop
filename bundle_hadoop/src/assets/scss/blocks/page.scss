@@ -3,11 +3,22 @@
 // }
 .page {
     display: grid;
-    grid-template-columns: 307px 1fr;
+    grid-template-columns: minmax(70px, 307px) 1fr;
     grid-template-rows: 72px 1fr 468px;
     grid-template-areas:
         "header header"
         "main main"
+        "footer footer"
+    ;
+}
+
+.page_nav {
+    display: grid;
+    grid-template-columns: minmax(70px, 307px) 1fr;
+    grid-template-rows: 72px 1fr 468px;
+    grid-template-areas:
+        "header header"
+        "aside main"
         "footer footer"
     ;
 }

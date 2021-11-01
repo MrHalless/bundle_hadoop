@@ -17,13 +17,26 @@
 }
 
 .presentation-info {
-  // width: 456px;
+  // margin-right: 90px;
+  // width: 490px;
   // min-width: 456px;
   // padding-right: 200px;
 }
 
 .presentation-example {
-  // width: 307px;
+  // margin-left: -90px;
+  // width: 490px;
+  // height: 136px;
+  // padding-left: 50px;
+  // color: #00D2A0;
+}
+
+.presentation-example__commands {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  // margin-left: -90px;
+  width: 490px;
   // height: 136px;
   // padding-left: 50px;
   // color: #00D2A0;

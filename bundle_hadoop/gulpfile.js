@@ -238,7 +238,8 @@ function watchFiles() {
 // const build = gulp.series(clean, gulp.parallel(html, css, js_lib, js, images, fonts));
 const build = gulp.series(clean, html, css, js_lib, js, images, fonts);
 // const watch = gulp.parallel(build, watchFiles, serve);
-const watch = gulp.parallel(build, watchFiles, serve);
+// const watch = gulp.parallel(build, watchFiles, serve);
+const watch = gulp.parallel(watchFiles, serve);
 
 
 

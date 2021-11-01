@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  {{> head }}
+</head>
+
+<body>
+  <div class="page_nav">
+    <!-- Header -->
+    {{> header }}
+    <!-- Sidebar -->
+    {{> sidebar}}
+    <!-- Main -->
+    <main class="main" style="color: #FFF;">
+      <!-- <div class="container"> -->
+      {{> body }}
+      <!-- main -->
+      <!-- </div> -->
+    </main>
+    {{> footer}}
+  </div>
+  <!-- JS -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/highlightjs.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+
+</html>
