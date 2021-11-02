@@ -15,24 +15,51 @@ $("#list-tab a").on("click", function (event) {
 
 hljs.highlightAll();
 
-// sidebar js
+// ------------------------------sidebar js-------------------------------------------
 
 let navLinksItem = document.getElementsByClassName("nav-links_item");
 
 for (let i = 0; i < navLinksItem.length; i++) {
   navLinksItem[i].addEventListener("click", function () {
-    console.log(this.parentElement);
-    this.parentElement.querySelector(".is_parent").classList.toggle("active");
+    let flag = this.parentElement
+      .querySelector(".is_parent")
+      .classList.contains("active");
+
+    if (flag) {
+      let allUL = document.getElementsByClassName("is_parent");
+      for (let i = 0; i < allUL.length; i++) {
+        allUL[i].classList.remove("active");
+      }
+      let navLinksItemParents = document.getElementsByClassName(
+        "nav-links_item_parent"
+      );
+      for (let i = 0; i < navLinksItemParents.length; i++) {
+        let elem = navLinksItemParents[i].children[1];
+        elem.parentElement.parentElement
+          .querySelector(".is_parent")
+          .classList.toggle("active");
+        let val = elem.parentElement.querySelectorAll(".chevron_right");
+        for (let i = 0; i < val.length; i++) {
+          val[i].parentElement
+            .querySelector(".chevron_right")
+            .classList.remove("chevron_down");
+        }
+      }
+    } else {
+      let allUL = document.getElementsByClassName("is_parent");
+      for (let i = 0; i < allUL.length; i++) {
+        allUL[i].classList.remove("active");
+      }
+      this.parentElement.querySelector(".is_parent").classList.toggle("active");
+    }
   });
 }
 
 let navLinksItemParents = document.getElementsByClassName(
   "nav-links_item_parent"
 );
-// console.log("35", navLinksItemParents[0].children[1]);
 for (let i = 0; i < navLinksItemParents.length; i++) {
   navLinksItemParents[i].children[1].addEventListener("click", function () {
-    // console.log(this.parentElement.parentElement);
     this.parentElement.parentElement
       .querySelector(".is_parent")
       .classList.toggle("active");
@@ -45,43 +72,29 @@ for (let i = 0; i < navLinksItemParents.length; i++) {
   });
 }
 
-// let sidebar = document.querySelector(".sidebar");
+$(".nav-links_item_release").on("click", function () {
+  let allUL = document.getElementsByClassName("is_parent");
+  for (let i = 0; i < allUL.length; i++) {
+    allUL[i].classList.remove("active");
+  }
+  let navLinksItemParents = document.getElementsByClassName(
+    "nav-links_item_parent"
+  );
+  for (let i = 0; i < navLinksItemParents.length; i++) {
+    let elem = navLinksItemParents[i].children[1];
+    elem.parentElement.parentElement
+      .querySelector(".is_parent")
+      .classList.toggle("active");
+    let val = elem.parentElement.querySelectorAll(".chevron_right");
+    for (let i = 0; i < val.length; i++) {
+      val[i].parentElement
+        .querySelector(".chevron_right")
+        .classList.remove("chevron_down");
+    }
+  }
+});
 
-// let getStarted = document.querySelector(".get");
-// console.log(getStarted);
-
-// getStarted.addEventListener("click", function () {
-//   $(".sub-menu-get").toggle("");
-// });
-
-// let subMenuGet = document.querySelector(".sub-menu-get");
-
-// subMenuGet.addEventListener("click", function () {
-//   // console.log(this);
-//   $(".more-1-sub-menu").toggle("");
-// });
-
-// // let navLink = document.querySelectorAll(".sidebar-menu");
-// let navLinks = document.querySelector(".nav-links");
-// console.log(navLinks);
-
-// let started = document.querySelector(".get");
-// // let planning =
-
-// started.onclick = function () {
-//   navLinks.classList.toggle("show-get");
-// };
-
-// for (let i = 0; i < navLink.children.length; i++) {
-//   const element = navLink.children[i];
-//   element.addEventListener("click", function () {
-//     // console.log(1);
-//     // console.log($(this.children[2]).toggle(""));
-//     $(this.children[2]).toggleClass("sub-menu-show");
-//   });
-// }
-// navLink.children.forEach((element) => {
-//   element.children[1].addEventListener("click", function () {
-//     console.log(this);
-//   });
-// });
+$(".sbar").on("click", function () {
+  $("aside").toggleClass("close-sm");
+  $(".page_nav").toggleClass("page_nav-sm");
+});

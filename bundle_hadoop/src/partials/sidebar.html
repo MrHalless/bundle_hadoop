@@ -1,10 +1,13 @@
 <aside class="sidebar">
+  <button class="sbar">Close</button>
+
   <div class="nav-links">
     <ul id="ul">
       <li class="nav-links_items">
         <span class="nav-links_item"
-          ><i class="getstarted"></i>Get Started</span
-        >
+          ><i class="getstarted"></i>
+          <span class="nav-links_item__text">Get Started</span>
+        </span>
         <ul class="is_parent">
           <li class="nav-links-li">
             <a href="#">How to start</a>
@@ -204,8 +207,9 @@
       <!-- Planning guide -->
       <li class="nav-links_items">
         <span class="nav-links_item"
-          ><i class="planningguides"></i>Planning guide</span
-        >
+          ><i class="planningguides"></i>
+          <span class="nav-links_item__text">Planning guide</span>
+        </span>
         <ul class="is_parent">
           <li>
             <span class="nav-links_item_parent">
@@ -239,7 +243,10 @@
 
       <!-- Concepts -->
       <li class="nav-links_items">
-        <span class="nav-links_item"><i class="concepts"></i>Concepts</span>
+        <span class="nav-links_item"
+          ><i class="concepts"></i>
+          <span class="nav-links_item__text">Concepts</span>
+        </span>
         <ul class="is_parent">
           <li class="nav-links-li">
             <a href="#">Core components</a>
@@ -277,7 +284,10 @@
 
       <!-- References -->
       <li class="nav-links_items">
-        <span class="nav-links_item"><i class="references"></i>References</span>
+        <span class="nav-links_item"
+          ><i class="references"></i>
+          <span class="nav-links_item__text">References</span>
+        </span>
         <ul class="is_parent">
           <li>
             <span class="nav-links_item_parent">
@@ -328,46 +338,48 @@
               <a href="#">Configuration parameters</a>
               <i class="chevron chevron_right"></i>
             </span>
-            <ul class="is_parent">
-              <li>
-                <a href="#">Airflow </a>
-              </li>
-              <li>
-                <a href="#">Flink </a>
-              </li>
-              <li>
-                <a href="#">HBase </a>
-              </li>
-              <li>
-                <a href="#">HDFS </a>
-              </li>
-              <li>
-                <a href="#">Hive </a>
-              </li>
-              <li>
-                <a href="#">MySQL </a>
-              </li>
-              <li>
-                <a href="#">Solr </a>
-              </li>
-              <li>
-                <a href="#">Spark </a>
-              </li>
-              <li>
-                <a href="#">Spark3 </a>
-              </li>
-              <li>
-                <a href="#">Sqoop </a>
-              </li>
-              <li>
-                <a href="#">YARN </a>
-              </li>
-              <li>
-                <a href="#">Zeppelin </a>
-              </li>
-              <li>
-                <a href="#">Zookeeper </a>
-              </li>
+            <ul class="is_parent over-y">
+              <div class="new-over">
+                <li>
+                  <a href="#">Airflow </a>
+                </li>
+                <li>
+                  <a href="#">Flink </a>
+                </li>
+                <li>
+                  <a href="#">HBase </a>
+                </li>
+                <li>
+                  <a href="#">HDFS </a>
+                </li>
+                <li>
+                  <a href="#">Hive </a>
+                </li>
+                <li>
+                  <a href="#">MySQL </a>
+                </li>
+                <li>
+                  <a href="#">Solr </a>
+                </li>
+                <li>
+                  <a href="#">Spark </a>
+                </li>
+                <li>
+                  <a href="#">Spark3 </a>
+                </li>
+                <li>
+                  <a href="#">Sqoop </a>
+                </li>
+                <li>
+                  <a href="#">YARN </a>
+                </li>
+                <li>
+                  <a href="#">Zeppelin </a>
+                </li>
+                <li>
+                  <a href="#">Zookeeper </a>
+                </li>
+              </div>
             </ul>
           </li>
           <li class="nav-links-li">
@@ -381,9 +393,11 @@
 
       <!-- Release notes  -->
       <li class="nav-links_items">
-        <span class="nav-links_item"
+        <span class="nav-links_item_release"
           ><i class="releasenotes"></i>
-          <a href="#">Release notes</a>
+          <a href="#">
+            <span class="nav-links_item__text">Release notes</span>
+          </a>
         </span>
       </li>
     </ul>
