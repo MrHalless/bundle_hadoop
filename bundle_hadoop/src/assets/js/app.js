@@ -30,6 +30,11 @@ for (let i = 0; i < navLinksItem.length; i++) {
       for (let i = 0; i < allUL.length; i++) {
         allUL[i].classList.remove("active");
       }
+      let removeChevron = document.getElementsByClassName("chevron");
+      for (let i = 0; i < removeChevron.length; i++) {
+        removeChevron[i].classList.remove("chevron_down");
+      }
+
       let navLinksItemParents = document.getElementsByClassName(
         "nav-links_item_parent"
       );
@@ -38,10 +43,11 @@ for (let i = 0; i < navLinksItem.length; i++) {
         elem.parentElement.parentElement
           .querySelector(".is_parent")
           .classList.toggle("active");
-        let val = elem.parentElement.querySelectorAll(".chevron_right");
+        let val = elem.parentElement.querySelectorAll(".chevron");
+
         for (let i = 0; i < val.length; i++) {
           val[i].parentElement
-            .querySelector(".chevron_right")
+            .querySelector(".chevron")
             .classList.remove("chevron_down");
         }
       }
@@ -49,6 +55,10 @@ for (let i = 0; i < navLinksItem.length; i++) {
       let allUL = document.getElementsByClassName("is_parent");
       for (let i = 0; i < allUL.length; i++) {
         allUL[i].classList.remove("active");
+      }
+      let removeChevron = document.getElementsByClassName("chevron");
+      for (let i = 0; i < removeChevron.length; i++) {
+        removeChevron[i].classList.remove("chevron_down");
       }
       this.parentElement.querySelector(".is_parent").classList.toggle("active");
     }
@@ -63,7 +73,7 @@ for (let i = 0; i < navLinksItemParents.length; i++) {
     this.parentElement.parentElement
       .querySelector(".is_parent")
       .classList.toggle("active");
-    let val = this.parentElement.querySelector(".chevron_right");
+    let val = this.parentElement.querySelector(".chevron");
     if (val) {
       this.parentElement
         .querySelector(".chevron_right")
@@ -85,7 +95,7 @@ $(".nav-links_item_release").on("click", function () {
     elem.parentElement.parentElement
       .querySelector(".is_parent")
       .classList.toggle("active");
-    let val = elem.parentElement.querySelectorAll(".chevron_right");
+    let val = elem.parentElement.querySelectorAll(".chevron");
     for (let i = 0; i < val.length; i++) {
       val[i].parentElement
         .querySelector(".chevron_right")
