@@ -12,29 +12,25 @@
 // }
 @import "fonts/f.scss";
 @import "blocks/bootstrap.scss";
+@import "blocks/css-tooltip.scss";
 @import "blocks/animate.scss";
 @import "vars";
 @import "vendor/reset";
-
-
 
 body {
   background-color: #212121;
   font-family: "DMSans";
 }
 
-
-
 *,
 *:before,
 *:after {
   box-sizing: border-box;
-
 }
 
 a {
   text-decoration: none !important;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 // a:active,
