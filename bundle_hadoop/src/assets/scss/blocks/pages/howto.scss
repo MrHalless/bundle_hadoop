@@ -1,0 +1,168 @@
+.content-howto {
+
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 20px;
+  margin-bottom: 24px;
+  // // width: inherit;
+  // height: 80vh;
+}
+
+
+
+.content-howto-card {
+  background: rgba(50, 50, 57, 0.5);
+  /* Dark 1 */
+
+  border: 1px solid #353E47;
+  box-sizing: border-box;
+  border-radius: 15px;
+
+  height: 157px;
+  width: 228px;
+}
+
+
+.content-howto-card__title a {
+  padding-top: 24px;
+  padding-left: 28px;
+  display: block;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 21px;
+  color: #1997E8;
+}
+
+.content-howto-card__title a:hover {
+  text-decoration: underline;
+}
+
+
+.content-howto-card__icon {
+  padding: 16px 40px 24px 28px;
+
+}
+
+.apacheairflow {
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 160px;
+  width: 160px;
+  height: 72px;
+  background-image: url("/assets/images/apacheairflow.svg");
+
+}
+
+.flink {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 160px;
+  width: 160px;
+  height: 72px;
+  background-image: url("/assets/images/flink.svg");
+}
+
+.hadoop {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 160px;
+  width: 160px;
+  height: 72px;
+  background-image: url("/assets/images/hadoop.svg");
+}
+
+.hdfs {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 160px;
+  width: 160px;
+  height: 72px;
+  background-image: url("/assets/images/hdfs.svg");
+}
+
+.apachehbase {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 160px;
+  width: 160px;
+  height: 72px;
+  background-image: url("/assets/images/apachehbase.svg");
+}
+
+.hive {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 160px;
+  width: 160px;
+  height: 72px;
+  background-image: url("/assets/images/hive.svg");
+}
+
+.apachephoenix {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 160px;
+  width: 160px;
+  height: 72px;
+  background-image: url("/assets/images/apachephoenix.svg");
+}
+
+.sqoop {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 160px;
+  width: 160px;
+  height: 72px;
+  background-image: url("/assets/images/sqoop.svg");
+}
+
+.solr {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 160px;
+  width: 160px;
+  height: 72px;
+  background-image: url("/assets/images/solr.svg");
+}
+
+.spark {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 160px;
+  width: 160px;
+  height: 72px;
+  background-image: url("/assets/images/spark.svg");
+}
+
+.tez {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 160px;
+  width: 160px;
+  height: 72px;
+  background-image: url("/assets/images/tez.svg");
+}
+
+.zeppelin {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 160px;
+  width: 160px;
+  height: 72px;
+  background-image: url("/assets/images/zeppelin.svg");
+}
+
+.apachezookeeper {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 160px;
+  width: 160px;
+  height: 72px;
+  background-image: url("/assets/images/apachezookeeper.svg");
+}

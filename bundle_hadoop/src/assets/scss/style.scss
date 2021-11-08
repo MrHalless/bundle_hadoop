@@ -17,6 +17,11 @@
 @import "vars";
 @import "vendor/reset";
 
+
+// pages
+@import "blocks/pages/hadoop.scss";
+@import "blocks/pages/howto.scss";
+
 body {
   background-color: #212121;
   font-family: "DMSans";
@@ -29,8 +34,14 @@ body {
 }
 
 a {
-  text-decoration: none !important;
+  text-decoration: none;
+
   color: #ffffff;
+}
+
+a:active,
+a:focus {
+  outline: none;
 }
 
 // a:active,
@@ -40,11 +51,14 @@ a {
 
 /* Blocks */
 @import "blocks/page";
+@import "blocks/content";
 @import "blocks/header";
+@import "blocks/head-icon";
 @import "blocks/nav";
 @import "blocks/subnav";
 @import "blocks/search";
 @import "blocks/sidebar";
+@import "blocks/right-nav";
 @import "blocks/main";
 @import "blocks/container";
 @import "blocks/presentation.scss";

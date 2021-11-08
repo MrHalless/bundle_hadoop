@@ -123,6 +123,9 @@ $(".sbar").on("click", function () {
   $(".releasenotes").attr("data-tooltip", function (index, attr) {
     return attr == "Release notes" ? null : "Release notes";
   });
+  $(".howto").attr("data-tooltip", function (index, attr) {
+    return attr == "How to" ? null : "How to";
+  });
   // $(".sbar").attr("data-tooltip", function (index, attr) {
   //   return attr == "Open sidebar" ? "Close sidebar" : "Open sidebar";
   // });
@@ -145,7 +148,37 @@ $(".sbar").on("click", function () {
         .classList.remove("chevron_down");
     }
   }
+  let checkOpenSbar = $(this).hasClass("sbar-open");
+
+  if (!checkOpenSbar) {
+    removeIconEvents();
+  } else {
+    addIconEvents();
+  }
+  // console.log($(this).hasClass("sbar-open"));
 });
+let checkOpenSbar = $(this).hasClass("sbar-open");
+
+if (!checkOpenSbar) {
+  removeIconEvents();
+} else {
+  addIconEvents();
+}
+function removeIconEvents() {
+  $(".getstarted").css("pointer-events", "none");
+  $(".planningguides").css("pointer-events", "none");
+  $(".concepts").css("pointer-events", "none");
+  $(".references").css("pointer-events", "none");
+  $(".releasenotes").css("pointer-events", "none");
+}
+
+function addIconEvents() {
+  $(".getstarted").css("pointer-events", "auto");
+  $(".planningguides").css("pointer-events", "auto");
+  $(".concepts").css("pointer-events", "auto");
+  $(".references").css("pointer-events", "auto");
+  $(".releasenotes").css("pointer-events", "auto");
+}
 
 function removeIconLight() {
   let allUl = $(".nav-links")[0].children[0].children;
