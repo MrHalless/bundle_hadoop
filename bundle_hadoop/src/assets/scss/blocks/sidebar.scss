@@ -58,6 +58,7 @@
 
 .is_parent li {
   padding: 12px 0;
+  z-index: 1;
 }
 
 .nav-links_items>ul {
@@ -108,6 +109,8 @@
   line-height: 20px;
 
   color: #c4c4c4;
+
+  z-index: 1;
 }
 
 .nav-links-li:hover {
