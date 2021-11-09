@@ -146,49 +146,6 @@
   // text-decoration: solid;
 }
 
-.found-mistake {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding-top: 26px;
-  padding-bottom: 36px;
-}
-
-.found-mistake__text {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 21px;
-  /* identical to box height */
-
-  display: flex;
-  align-items: center;
-  text-align: center;
-
-  /* Grey Light */
-
-  color: #7F7F7F;
-}
-
-.found-mistake__text span {
-  color: red;
-  margin: 0px 4px;
-
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 21px;
-  /* identical to box height */
-
-  display: flex;
-  align-items: center;
-  text-align: center;
-
-  /* Off White */
-
-  color: #FCFCFD;
-}
 
 .adh-content-info-content-ref-body>a:hover {
   // color: red;

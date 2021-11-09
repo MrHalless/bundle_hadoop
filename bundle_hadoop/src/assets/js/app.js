@@ -126,6 +126,8 @@ $(".sbar").on("click", function () {
   $(".howto").attr("data-tooltip", function (index, attr) {
     return attr == "How to" ? null : "How to";
   });
+  // console.log($('.conf-par'));
+
   // $(".sbar").attr("data-tooltip", function (index, attr) {
   //   return attr == "Open sidebar" ? "Close sidebar" : "Open sidebar";
   // });
@@ -152,17 +154,21 @@ $(".sbar").on("click", function () {
 
   if (!checkOpenSbar) {
     removeIconEvents();
+    $('.conf-par').toggleClass('over-y');
   } else {
     addIconEvents();
+    $('.conf-par').toggleClass('over-y');
   }
   // console.log($(this).hasClass("sbar-open"));
 });
-let checkOpenSbar = $(this).hasClass("sbar-open");
+let checkOpenSbar = $('.sbar').hasClass("sbar-open");
 
 if (!checkOpenSbar) {
   removeIconEvents();
+  $('.conf-par').removeClass('over-y');
 } else {
   addIconEvents();
+  $('.conf-par').addClass('over-y');
 }
 function removeIconEvents() {
   $(".getstarted").css("pointer-events", "none");
