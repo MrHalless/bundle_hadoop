@@ -124,7 +124,7 @@ $(".sbar").on("click", function () {
     return attr == "Release notes" ? null : "Release notes";
   });
   $(".howto").attr("data-tooltip", function (index, attr) {
-    return attr == "How to" ? null : "How to";
+    return attr == "How To!" ? null : "How To!";
   });
   // console.log($('.conf-par'));
 
@@ -233,3 +233,17 @@ $(".references").on("click", function () {
 $(".releasenotes").on("click", function () {
   removeIconLight();
 });
+
+
+// $('.chevron').on('click', function () {
+//   console.log(this.parentElement.parentElement.parentElement.children);
+//   let block1 = this.parentElement.parentElement.parentElement.children;
+
+//   for (let i = 0; i < block1.length; i++) {
+
+//     console.log(block1.children[0].children[1]);
+//     block1.children[0].children[1].toggleClass('chevron_down')
+//   }
+
+
+// })

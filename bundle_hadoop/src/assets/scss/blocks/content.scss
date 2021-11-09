@@ -133,7 +133,7 @@
 }
 
 .content-head-info-description {
-  padding: 8px 0px;
+  padding-top: 24px;
 }
 
 .content-head-info-description__text {
@@ -145,8 +145,13 @@
   /* Off White */
 
   color: #fcfcfd;
+  padding: 8px 0;
 }
 
+.content-head-info-description__text>span>a {
+  text-decoration: underline;
+  color: #1997E8;
+}
 
 .change-pages {
   height: 72px;

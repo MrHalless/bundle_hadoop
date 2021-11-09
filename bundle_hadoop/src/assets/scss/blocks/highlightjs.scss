@@ -8,32 +8,18 @@
   Touched: 2021
 */
 pre code.hljs {
-  // display: block;
-  // overflow-x: auto;
-  // padding: 1em
+  display: block;
+  overflow-x: auto;
+  padding: 1em
 }
 
 code.hljs {
-  // padding: 3px 5px
+  padding: 3px 5px
 }
 
 .hljs {
-  // background: #f0f0f0;
-  background: transparent;
-  // color: #EFEFEF;
-  font-family: DMMono;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  line-height: 21px;
-
-  /* White with grey */
-
-  color: #EFEFEF;
-}
-
-.language-sql {
-  // padding-left: -20px;
+  background: #f0f0f0;
+  color: #444
 }
 
 .hljs-comment {
@@ -60,18 +46,14 @@ code.hljs {
 }
 
 .hljs-deletion,
-
+.hljs-number,
 .hljs-quote,
 .hljs-selector-class,
 .hljs-selector-id,
 .hljs-string,
 .hljs-template-tag,
 .hljs-type {
-  color: #00A872
-}
-
-.hljs-number {
-  color: #1997E8;
+  color: #800
 }
 
 .hljs-section,

@@ -1,0 +1,114 @@
+.content-offinst {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+
+.card-offinst {
+  width: 352px;
+  height: 230px;
+
+  background: linear-gradient(90.83deg, #323239 1.71%, #2A3137 96.43%);
+  border-radius: 15px;
+}
+
+
+
+
+.card-offins__icon {
+  padding: 24px 24px 0 24px;
+}
+
+.card-offins-info {
+  padding: 0 0 24px 24px
+}
+
+
+.card-offins-info__title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 32px;
+  /* identical to box height, or 152% */
+
+
+  /* Green Saturated */
+
+  color: #00D2A0;
+  padding-bottom: 7px;
+}
+
+.card-offins-info__text {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 33px;
+  /* identical to box height */
+
+
+  /* Off White */
+
+  color: #FCFCFD;
+  padding-bottom: 7px;
+}
+
+
+.ois1 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 304px;
+  width: 304px;
+  height: 120px;
+  background-image: url("/assets/images/ois1.svg");
+
+}
+
+
+.ois2 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 304px;
+  width: 304px;
+  height: 120px;
+  background-image: url("/assets/images/ois2.svg");
+
+}
+
+
+.ois3 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 304px;
+  width: 304px;
+  height: 120px;
+  background-image: url("/assets/images/ois3.svg");
+
+}
+
+
+.ois4 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 304px;
+  width: 304px;
+  height: 120px;
+  background-image: url("/assets/images/ois4.svg");
+
+}
+
+
+.ois5 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 304px;
+  width: 304px;
+  height: 120px;
+  background-image: url("/assets/images/ois5.svg");
+
+}
