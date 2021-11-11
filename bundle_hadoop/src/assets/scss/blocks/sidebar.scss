@@ -1,6 +1,8 @@
 .sidebar {
   color: #fff;
   width: 307px;
+  margin-left: 40px;
+  margin-right: 20px;
   // transition: 0.5s ease-in;
 }
 
@@ -62,16 +64,16 @@
 }
 
 .nav-links_items>ul {
-  padding-left: 76px;
-  padding: 0 0 0 76px;
+  // padding-left: 76px;
+  padding: 0 0 0 36px;
 }
 
 .nav-links_item {
-  padding: 16px 0 16px 40px;
+  padding: 16px 0 16px 0px;
 }
 
 .nav-links_item_link {
-  padding: 16px 0 16px 40px;
+  padding: 16px 0 16px 0px;
   cursor: pointer;
   user-select: none;
   display: flex;
@@ -334,6 +336,11 @@
 
 // close-sm sidebar ---------------------------------------------------------------
 
+.sidebar.close-sm {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .close-sm {
   color: #fff;
   width: inherit;
@@ -589,7 +596,7 @@
 }
 
 .sidebar .sidebar-head-button hr:nth-child(1) {
-  width: 243px;
+  width: 283px;
 }
 
 .sidebar.close-sm .sidebar-head-button hr:nth-child(3) {

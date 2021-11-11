@@ -234,16 +234,32 @@ $(".releasenotes").on("click", function () {
   removeIconLight();
 });
 
+function copyToClipboard(str) {
+  var area = document.createElement('input');
+  document.body.appendChild(area);
+  area.value = str;
+  area.select();
+  document.execCommand("copy");
+  document.body.removeChild(area);
+}
 
-// $('.chevron').on('click', function () {
-//   console.log(this.parentElement.parentElement.parentElement.children);
-//   let block1 = this.parentElement.parentElement.parentElement.children;
+$('.copy-button').on('click', function () {
+  let code = this.parentElement.children[0].children[0].innerText;
+  copyToClipboard(code);
 
-//   for (let i = 0; i < block1.length; i++) {
+  let blockCopied = this.children[1];
+  $(this).css('background-image', 'url("/assets/images/copy-button-green.svg")')
+  $(blockCopied).css('display', 'block')
+})
 
-//     console.log(block1.children[0].children[1]);
-//     block1.children[0].children[1].toggleClass('chevron_down')
-//   }
+$('.copy-button').on('mouseover', function () {
+  let blockCopied = this.children[1];
+  $(this).css('background-image', 'url("/assets/images/copy-button-blue.svg")')
+  $(blockCopied).css('display', 'none')
+})
 
-
-// })
+$('.copy-button').on('mouseout', function () {
+  let blockCopied = this.children[1];
+  $(this).css('background-image', 'url("/assets/images/copy-button-grey.svg")')
+  $(blockCopied).css('display', 'none')
+})

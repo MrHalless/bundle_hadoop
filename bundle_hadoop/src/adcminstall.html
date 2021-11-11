@@ -6,7 +6,7 @@ title: Offline installation
   <div class="content">
     <div class="content-head">
       <div class="content-head-info">
-        <div class="content-head-info__title">ADCM installation</div>
+        <h1 class="content-head-info__title">ADCM installation</h1>
         <div class="content-head-info-update">
           <div class="content-head-info-update__icon">
             <div class="updated"></div>
@@ -30,7 +30,517 @@ title: Offline installation
       </div>
     </div>
     <!-- content -->
-    <div class="content-CONTENT">
+    <div class="content-body">
+      <!-- step1 -->
+      <h2 class="content-body__title">
+        Step 1. Checking prerequisites
+      </h2>
+      <h3 class="content-body__info">
+        Software and hardware requirements
+      </h3>
+      <div class="content-body-section">
+        <div class="content-body-section__text">
+          ADCM is a software, distributed in the form of a Docker Image. To install it, you need:
+        </div>
+        <ul class="custom-list-first">
+          <li>
+            A maintained version of CentOS 7/RHEL 7 operation system. Archived versions are not supported or
+            tested.</li>
+          <li>A user account with sudo privileges.</li>
+          <li>
+            <span> Access to the official repository of CentOS Extras and CentOS Base. This repository is enabled by
+              default, but if you have disabled it, you need to re-enable it.</span>
+          </li>
+          <li>Software package installer YUM.
+            <ul class="custom-list-second">
+              <li>CPU: 2-4 CPU Cores</li>
+              <li>RAM: 8-16 GB</li>
+              <li>HDD: 8-50 GB</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <h3 class="content-body__info">
+        Docker installation
+      </h3>
+      <div class="block-tip">
+        <div class="block-tip-content">
+          <div class="block-tip-content__title">
+            CAUTION
+          </div>
+          <div class="block-tip-content__body">
+            Do not install Docker from the <span><a href="#">
+                official Docker site</a></span>. Instead of it, use official repositories of your
+            Linux distribution. Repositories, provided by operation system developers, tend to be more stable and
+            secure.
+          </div>
+        </div>
+        <div class="block-tip-icon">
+          <div class="caution"></div>
+        </div>
+      </div>
+      <div class="content-body-section">
+        <div class="content-body-section__text">
+          The typical installation sequence via the package manager YUM includes the following steps:
+        </div>
+        <div class="block-commands">
+          <ol>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Using root privileges, update all packages, currently installed in your system:
+              </div>
+              <div class="steps-content__code">
+                <pre><code class="language-shell">$ sudo yum update</code></pre>
+                <div class="copy-button">
+                  <div class="copy-button-tooltip">
+                    <div class="copy-button-tooltip__text">Copy</div>
+                  </div>
+                  <div class="copy-button-tooltip-copied">
+                    <div class="copy-button-tooltip-copied__text">Copied</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Using root privileges, install packages, required for Docker installation and using:
+              </div>
+              <div class="steps-content__code">
+                <pre><code class="language-shell">Lorem ipsum dolor sit amet.</code></pre>
+                <div class="copy-button">
+                  <div class="copy-button-tooltip">
+                    <div class="copy-button-tooltip__text">Copy</div>
+                  </div>
+                  <div class="copy-button-tooltip-copied">
+                    <div class="copy-button-tooltip-copied__text">Copied</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Start Docker:
+              </div>
+              <div class="steps-content__code">
+                <pre><code class="language-shell">$ sudo systemctl start docker</code></pre>
+                <div class="copy-button">
+                  <div class="copy-button-tooltip">
+                    <div class="copy-button-tooltip__text">Copy</div>
+                  </div>
+                  <div class="copy-button-tooltip-copied">
+                    <div class="copy-button-tooltip-copied__text">Copied</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Enable Docker as a system service:
+              </div>
+              <div class="steps-content__code">
+                <pre><code class="language-shell">$ sudo systemctl enable docker</code></pre>
+                <div class="copy-button">
+                  <div class="copy-button-tooltip">
+                    <div class="copy-button-tooltip__text">Copy</div>
+                  </div>
+                  <div class="copy-button-tooltip-copied">
+                    <div class="copy-button-tooltip-copied__text">Copied</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <h3 class="content-body__info">
+        SeLinux disabling
+      </h3>
+      <div class="content-body-section">
+        <div class="content-body-section__text">
+          SELinux should be disabled for ADCM. To do it permanently, set SELINUX=disabled in the file
+          /etc/selinux/config and restart your system.
+        </div>
+        <div class="block-commands">
+          <ul>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                You can edit the file, using vi or vim command:
+              </div>
+              <div class="steps-content__code">
+                <pre><code class="language-shell">$ vi /etc/selinux/config</code></pre>
+                <div class="copy-button">
+                  <div class="copy-button-tooltip">
+                    <div class="copy-button-tooltip__text">Copy</div>
+                  </div>
+                  <div class="copy-button-tooltip-copied">
+                    <div class="copy-button-tooltip-copied__text">Copied</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                The content of the changed file should look like this:
+              </div>
+              <div class="steps-content__code">
+                <pre><code class="language-shell">
+                  # This file controls the state of SELinux on the system.
+                  # SELINUX= can take one of these three values:
+                  #       enforcing - SELinux security policy is enforced.
+                  #       permissive - SELinux prints warnings instead of enforcing.
+                  #       disabled - SELinux is fully disabled.
+                  SELINUX=disabled
+                  # SELINUXTYPE= type of policy in use. Possible values are:
+                  #       targeted - Only targeted network daemons are protected.
+                  #       strict - Full SELinux protection.
+                  SELINUXTYPE=targeted</code></pre>
+                <div class="copy-button">
+                  <div class="copy-button-tooltip">
+                    <div class="copy-button-tooltip__text">Copy</div>
+                  </div>
+                  <div class="copy-button-tooltip-copied">
+                    <div class="copy-button-tooltip-copied__text">Copied</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                You can also disable SELinux temporarily, running the following command on each host of your cluster:
+              </div>
+              <div class="steps-content__code">
+                <pre><code class="language-shell">$ setenforce 0</code></pre>
+                <div class="copy-button">
+                  <div class="copy-button-tooltip">
+                    <div class="copy-button-tooltip__text">Copy</div>
+                  </div>
+                  <div class="copy-button-tooltip-copied">
+                    <div class="copy-button-tooltip-copied__text">Copied</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="content-body-section__text">
+          But permanently disabling SELinux, that it does not restart on each system reboot, is strongly recommended.
+        </div>
+      </div>
+      <!-- /step1 -->
+      <!-- step2 -->
+      <h2 class="content-body__title">
+        Step 2. Installing ADCM
+      </h2>
+      <div class="block-tip">
+        <div class="block-tip-content">
+          <div class="block-tip-content__title">
+            IMPORTANT
+          </div>
+          <div class="block-tip-content__body">
+            <div class="block-tip-content__text">
+              Before installing ADCM make sure, that:
+            </div>
+            <ul class="custom-list-first">
+              <li>
+                You have installed some Docker or compatible container engine for running ADCM.</li>
+              <li>You have created your own SELinux policies or switched it off. Notice, that current software version
+                is not compatible with SELinux.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="block-tip-icon">
+          <div class="important"></div>
+        </div>
+      </div>
+      <div class="content-body-section">
+        <div class="content-body-section__text">
+          To install ADCM you should run the following commands:
+        </div>
+        <div class="block-commands">
+          <ol>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Pull a Docker Image from Arenadata Docker Registry.
+              </div>
+              <div class="steps-content__code">
+                <pre><code class="language-shell">$ docker pull hub.arenadata.io/adcm/adcm:latest</code></pre>
+                <div class="copy-button">
+                  <div class="copy-button-tooltip">
+                    <div class="copy-button-tooltip__text">Copy</div>
+                  </div>
+                  <div class="copy-button-tooltip-copied">
+                    <div class="copy-button-tooltip-copied__text">Copied</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Create a container, based on that image. The command below makes a container on the port 8000 with ADCM.
+                All its data will be stored on the host machine in the directory /opt/adcm/.
+              </div>
+              <div class="steps-content__code">
+                <pre><code class="language-shell">$ docker create --name adcm -p 8000:8000 -v </code></pre>
+                <div class="copy-button">
+                  <div class="copy-button-tooltip">
+                    <div class="copy-button-tooltip__text">Copy</div>
+                  </div>
+                  <div class="copy-button-tooltip-copied">
+                    <div class="copy-button-tooltip-copied__text">Copied</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="block-tip">
+        <div class="block-tip-content">
+          <div class="block-tip-content__title">
+            NOTE
+          </div>
+          <div class="block-tip-content__body">
+            <div class="block-tip-content__text">
+              ADCM has some mandatory persistent information, which is stored in /adcm/data directory inside of a
+              container. That means, that you have to map a volume to that directory and provide for that volume
+              backups.
+            </div>
+          </div>
+        </div>
+        <div class="block-tip-icon">
+          <div class="note"></div>
+        </div>
+      </div>
+      <!-- step2 -->
+      <!-- step3 -->
+      <h2 class="content-body__title">
+        Step 3. Starting ADCM
+      </h2>
+      <div class="content-body-section">
+        <div class="content-body-section__text">
+          ADCM is just a container, operated by Docker. So you are able to use simple Docker commands to start and stop
+          ADCM:
+        </div>
+        <div class="block-commands">
+          <ol>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                To start ADCM use the following command:
+              </div>
+              <div class="steps-content__code">
+                <pre><code class="language-shell">$ sudo docker start adcm</code></pre>
+                <div class="copy-button">
+                  <div class="copy-button-tooltip">
+                    <div class="copy-button-tooltip__text">Copy</div>
+                  </div>
+                  <div class="copy-button-tooltip-copied">
+                    <div class="copy-button-tooltip-copied__text">Copied</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                To stop ADCM use the following command:
+              </div>
+              <div class="steps-content__code">
+                <pre><code class="language-shell">$ sudo docker stop adcm</code></pre>
+                <div class="copy-button">
+                  <div class="copy-button-tooltip">
+                    <div class="copy-button-tooltip__text">Copy</div>
+                  </div>
+                  <div class="copy-button-tooltip-copied">
+                    <div class="copy-button-tooltip-copied__text">Copied</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <!-- /step3 -->
+      <!-- step4 -->
+      <h2 class="content-body__title">
+        Step 4. Checking installation
+      </h2>
+      <h3 class="content-body__info">
+        Checking port 8000 availability
+      </h3>
+      <div class="content-body-section">
+        <div class="content-body-section__text">
+          After installing and running ADCM, its web interface should become available on the port 8000 of the deployed
+          container. You can check it, using these commands:
+        </div>
+        <div class="block-commands">
+          <ul>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                The command netstat — to display information about the port listening.
+              </div>
+              <div class="steps-content__code">
+                <pre><code class="language-shell">$ sudo netstat -ntpl | grep 8000</code></pre>
+                <div class="copy-button">
+                  <div class="copy-button-tooltip">
+                    <div class="copy-button-tooltip__text">Copy</div>
+                  </div>
+                  <div class="copy-button-tooltip-copied">
+                    <div class="copy-button-tooltip-copied__text">Copied</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                The output data should look like this:
+              </div>
+              <div class="steps-content__code">
+                <pre><code class="language-shell">tcp6       0      0 :::8000                 :::*      </code></pre>
+                <div class="copy-button">
+                  <div class="copy-button-tooltip">
+                    <div class="copy-button-tooltip__text">Copy</div>
+                  </div>
+                  <div class="copy-button-tooltip-copied">
+                    <div class="copy-button-tooltip-copied__text">Copied</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                The command curl — to check the URL connection.
+              </div>
+              <div class="steps-content__code">
+                <pre><code class="language-shell">$ curl http://localhost:8000</code></pre>
+                <div class="copy-button">
+                  <div class="copy-button-tooltip">
+                    <div class="copy-button-tooltip__text">Copy</div>
+                  </div>
+                  <div class="copy-button-tooltip-copied">
+                    <div class="copy-button-tooltip-copied__text">Copied</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                The output data should look like this:
+              </div>
+              <div class="steps-content__code">
+                <pre><code class="language-html">      
+                  &lt;!doctype html&gt;
+                  &lt;html lang=&quot;en&quot;&gt;
+                  &lt;head&gt;
+                  &lt;meta charset=&quot;utf-8&quot;&gt;
+                  &lt;title&gt;Arenadata Cluster Manager&lt;/title&gt;
+                  &lt;base href=&quot;/&quot;&gt;
+                  <!-- &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt; -->
+                  <!-- &lt;link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;assets/favicon.ico&quot;&gt; -->
+                  <!-- &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.10db6328264e0907c52f.css&quot;&gt;&lt;/head&gt; -->
+                  &lt;body&gt;
+                  &lt;app-root&gt;&lt;/app-root&gt;
+                  <!-- &lt;script src=&quot;runtime-es2015.7eb406ed18bf0258cd35.js&quot; type=&quot;module&quot;&gt;&lt;/script&gt;&lt;script src=&quot;runtime-es5.7eb406ed18bf0258cd35.js&quot; nomodule defer&gt;&lt;/script&gt;&lt;script src=&quot;polyfills-es5.2e224d70daec4412d3c2.js&quot; nomodule defer&gt;&lt;/script&gt;&lt;script src=&quot;polyfills-es2015.37e0553ac06970d6a5b5.js&quot; type=&quot;module&quot;&gt;&lt;/script&gt;&lt;script src=&quot;main-es2015.39851da0ebf9ed6fec45.js&quot; type=&quot;module&quot;&gt;&lt;/script&gt;&lt;script src=&quot;main-es5.39851da0ebf9ed6fec45.js&quot; nomodule defer&gt;&lt;/script&gt;&lt;/body&gt; -->
+                  &lt;/html&gt;   
+                </code></pre>
+                <div class="copy-button">
+                  <div class="copy-button-tooltip">
+                    <div class="copy-button-tooltip__text">Copy</div>
+                  </div>
+                  <div class="copy-button-tooltip-copied">
+                    <div class="copy-button-tooltip-copied__text">Copied</div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <h3 class="content-body__info">
+        Checking ADCM web-interface
+      </h3>
+      <div class="content-body-section">
+        <div class="content-body-section__text">
+          To log in to ADCM, you should use the user with administrator rights, which is created by default:
+        </div>
+        <ul class="custom-list-first">
+          <li>
+            User name: admin</li>
+          <li>Password: admin</li>
+        </ul>
+        <div class="content-body-image">
+          <img src="/assets/images/login-adcm.png" alt="">
+        </div>
+        <div class="content-body-section__text">
+          Later you can change the password, if necessary. To do this:
+        </div>
+        <div class="block-commands">
+          <ol>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Click the list item Settings in the account menu.
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Select the tab Users.
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Change the password and confirm it in the according fields.
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="content-body-image">
+          <img src="/assets/images/2.png" alt="">
+        </div>
+      </div>
+      <h3 class="content-body__info">
+        Checking ADCM URL
+      </h3>
+      <div class="content-body-section">
+        <div class="content-body-section__text">
+          If ADCM container ends up on the network using NAT, it makes impossible the automatic determining the address
+          of ADCM container, which is used by clusters components for sending information about their state to ADCM.
+        </div>
+        <div class="content-body-section__text">
+          In this and other cases of complicated network structures, you may need to specify ADCM URL manually. To do
+          this:
+        </div>
+        <div class="block-commands">
+          <ol>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Click the list item Settings in the account menu.
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Select the tab Settings.
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Check the correctness of the automatically determined URL in the field ADCM’s URL and replace it with a
+                valid one, if necessary.
+              </div>
+              <div class="content-body-image">
+                <img src="/assets/images/3.png" alt="">
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Click Save.
+              </div>
+              <div class="content-body-image">
+                <img src="/assets/images/4.png" alt="">
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <!-- /step4 -->
+      <!-- /content body -->
     </div>
     <div class="found-mistake">
       <div class="found-mistake__text">

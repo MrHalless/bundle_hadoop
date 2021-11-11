@@ -6,7 +6,7 @@
   // justify-content: space-between;
 
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 20px;
@@ -26,8 +26,8 @@
   box-sizing: border-box;
   border-radius: 15px;
 
-  min-height: 156px;
-  min-width: 228px;
+  height: 156px;
+  width: 228px;
 }
 
 

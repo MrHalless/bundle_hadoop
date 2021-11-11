@@ -1,6 +1,6 @@
 .content-offinst {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
@@ -9,15 +9,30 @@
 
 }
 
+.content-offinst a {
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 15px;
+}
+
+.content-offinst a:focus-visible {
+  border: 1px solid #1997E8;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
 
 .card-offinst {
-  width: 352px;
+  width: 350px;
   height: 230px;
 
   background: linear-gradient(90.83deg, #323239 1.71%, #2A3137 96.43%);
   border-radius: 15px;
 }
 
+.card-offinst:hover {
+  background: linear-gradient(111.14deg, rgba(169, 224, 226, 0.15) 7.26%, rgba(1, 248, 168, 0.15) 63.94%);
+  border-radius: 15px;
+}
 
 
 
