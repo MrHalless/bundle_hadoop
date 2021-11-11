@@ -1,0 +1,203 @@
+---
+layout: has_sidebar
+title: Offline installation
+---
+<div class="page-content">
+  <div class="content">
+    <div class="content-head">
+      <div class="content-head-info">
+        <div class="content-head-info__title">HDFS</div>
+        <div class="content-head-info-update">
+          <div class="content-head-info-update__icon">
+            <div class="updated"></div>
+          </div>
+          <div class="content-head-info-update__text">
+            Updated on 15 Sept 2021
+          </div>
+        </div>
+      </div>
+      <div class="content-head-logo">
+        <div class="head-adh"></div>
+      </div>
+    </div>
+    <!-- <div class="content-head-info-description">
+      <div class="content-head-info-description__text">
+        TOPIC
+      </div>
+      <div class="content-head-info-description__text">
+        TOPIC
+      </div>
+    </div> -->
+    <!-- content -->
+    <div class="content-body">
+      <div class="content-body-section">
+        <div class="content-body-section__text">HDFS (Hadoop Distributed File System) is highly fault-tolerant and is
+          designed to be deployed on low-cost hardware. HDFS provides high throughput access to application data and is
+          suitable for applications that have large data sets.</div>
+        <div class="content-body-section__text">All the files and directories in the HDFS namespace are represented on
+          the
+          NameNode by inodes that contain various attributes like permissions, modification timestamp, disk space quota,
+          namespace quota and access times.</div>
+      </div>
+      <h2 class="content-body__title">
+        Components
+      </h2>
+      <div class="content-body-section">
+        <ul class="custom-list-first">
+          <li>
+            NameNode: It acts as the master of the system. It maintains the name system i.e., directories and files and
+            manages the blocks which are present on the DataNodes.</li>
+          <li>DataNodes: They are the slaves which are deployed on each machine and provide the actual storage. They are
+            responsible for serving read and write requests for the clients.</li>
+          <li>
+            <span> Secondary NameNode: It is responsible for performing periodic checkpoints. In the event of NameNode
+              failure, you can restart the NameNode using the checkpoint.</span>
+          </li>
+        </ul>
+      </div>
+      <h2 class="content-body__title">
+        Architecture
+      </h2>
+      <div class="content-body-section">
+        <div class="content-body-section__text">
+          HDFS uses a primary/secondary architecture. The HDFS cluster’s NameNode is the primary server that manages the
+          file system namespace and controls client access to files. The system’s DataNodes manage the storage that’s
+          attached to the nodes they run on.
+        </div>
+        <div class="content-body-image">
+          <img src="/assets/images/hdfsdm.png" alt="">
+        </div>
+        <div class="content-body-section__text">
+          HDFS exposes a file system namespace and enables user data to be stored in files. As we said earlier, a file
+          is split into one or more of the blocks that are stored in a set of DataNodes. The NameNode performs file
+          system namespace operations, including opening, closing and renaming files and directories. The NameNode also
+          governs the mapping of blocks to the DataNodes.
+        </div>
+        <div class="content-body-section__text">
+          The DataNodes serve to read and write requests from the clients of the file system. In addition, they perform
+          block creation, deletion and replication when the NameNode instructs them to do so.
+        </div>
+        <div class="content-body-section__text">
+          The NameNode records any change to the file system namespace or its properties. An application can stipulate
+          the number of replicas of a file that the HDFS should maintain. The NameNode stores the number of copies of a
+          file, called the replication factor of that file.
+        </div>
+      </div>
+      <h2 class="content-body__title">
+        Operations with files
+      </h2>
+      <div class="content-body-section">
+        <div class="content-body-section__text">
+          Unlike local file systems, HDFS does not allow to change (modify) a file. Files in HDFS can be written only
+          once, and only one process writes to the file at a time. Since HDFS is used for Big Data, this file system
+          focuses on large file sizes (>10GB). At the same time, the files consist of blocks with bigger sizes than we
+          used to see in regular file systems.
+        </div>
+        <div class="content-body-section__text">
+          A file on HDFS is split into multiple blocks, and each is replicated within the Hadoop cluster. A block on
+          HDFS is a blob of data within the underlying file system with a default size of 128MB. The size of a block can
+          be extended up to 256 MB based on the requirements.
+        </div>
+        <div class="content-body-section__text">
+          In Hadoop, the following operations you can do with files:
+        </div>
+        <ul class="custom-list-first">
+          <li>write</li>
+          <li>read</li>
+          <li>delete</li>
+          <li>replicate</li>
+        </ul>
+        <div class="content-body-section__text">
+          Let’s follow the file writing procedure:
+        </div>
+        <div class="block-commands">
+          <ol>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                The client splits a file into pieces with default block size.
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                The client connects the NameNode and requests the writing procedure along with sending blocks and
+                replication level.
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Answering the NameNode sends back the DataNode sequence for the writing.
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                The client goes to the first in the list DataNode and writes the first block. If the connection is
+                failed, the client takes second DataNode and so on.
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                The first DataNode writes the block and passes the writing to the second DataNode in the list untill the
+                end.
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Upon completion of the recording in reverse order (4 → 3, 3 → 2, 2 → 1, 1 → messages about successful
+                writing are sent to the client).
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                As soon as the client receives confirmation of the successful block writing, it notifies the NameNode of
+                the block recording, then receives a DataNode chain for recording the second block, etc.
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div class="content-body-section__text">
+          The client continues to write blocks if he manages to successfully write a block to at least one node, i.e.
+          replication will work according to the well-known eventual principle, spreading the blocks further to
+          DataNodes and achiving the aimed replication level.
+        </div>
+        <h2 class="content-body__title">
+          Replication
+        </h2>
+        <div class="content-body-section">
+          <div class="content-body-section__text">
+            HDFS provides a reliable way to store huge data in a distributed environment as data blocks. The blocks are
+            also replicated to provide fault tolerance. The default replication factor is 3 which is again configurable.
+            Therefore, if you are storing a file of 128 MB in HDFS using the default configuration, you will need
+            occupying a space of 384 MB (3*128 MB) as the blocks will be replicated three times and each replica will be
+            residing on a different DataNode.
+          </div>
+        </div>
+      </div>
+      <!-- /content body -->
+    </div>
+    <div class="found-mistake">
+      <div class="found-mistake__text">
+        Found a mistake? Seleсt text and press <span>Ctrl+Enter</span> to report it.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="change-pages">
+  <div class="change-pages-left">
+    <a href="#">
+      <div class="change-pages-left__button">
+      </div>
+      <div class="change-pages-left__text">
+        Core components
+      </div>
+    </a>
+  </div>
+  <div class="change-pages-right">
+    <a href="#">
+      <div class="change-pages-right__text">
+        YARN and Resource manager
+      </div>
+      <div class="change-pages-right__button">
+      </div>
+    </a>
+  </div>
+</div>
