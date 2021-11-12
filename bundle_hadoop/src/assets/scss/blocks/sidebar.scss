@@ -183,24 +183,54 @@
 }
 
 .chevron_right {
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 8px;
+
+
   padding-right: 10px;
   width: 8px;
   height: 12px;
   background-image: url("/assets/images/chevron-right.svg");
 }
 
-// .nav-links_item .chevron_right {
-//   transform: rotate(90deg);
-// }
+.chevron_right-lg {
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 14px;
+
+
+  margin-left: 12px;
+  width: 13.5px;
+  height: 20px;
+  background-image: url("/assets/images/chevron-right.svg");
+}
 
 .nav-links_item:hover {
   color: #00d2a0;
 }
 
 .chevron_down {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 12px;
+
   width: 12px;
   height: 8px;
   padding-right: 10px;
+  background-image: url("/assets/images/chevron-down.svg");
+}
+
+.chevron_down-lg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+
+  width: 20px;
+  height: 13.5px;
+  margin-left: 12px;
   background-image: url("/assets/images/chevron-down.svg");
 }
 

@@ -1,17 +1,17 @@
-$(".collapse")
-  .on("shown.bs.collapse", function () {
-    $(this).parent()[0].children[0].children[3].style.display = "none";
-    $(this).parent()[0].children[0].children[2].style.display = "block";
-  })
-  .on("hidden.bs.collapse", function () {
-    $(this).parent()[0].children[0].children[2].style.display = "none";
-    $(this).parent()[0].children[0].children[3].style.display = "block";
-  });
+// $(".collapse")
+//   .on("shown.bs.collapse", function () {
+//     $(this).parent()[0].children[0].children[3].style.display = "none";
+//     $(this).parent()[0].children[0].children[2].style.display = "block";
+//   })
+//   .on("hidden.bs.collapse", function () {
+//     $(this).parent()[0].children[0].children[2].style.display = "none";
+//     $(this).parent()[0].children[0].children[3].style.display = "block";
+//   });
 
-$("#list-tab a").on("click", function (event) {
-  event.preventDefault();
-  $(this).tab("show");
-});
+// $("#list-tab a").on("click", function (event) {
+//   event.preventDefault();
+//   $(this).tab("show");
+// });
 
 hljs.highlightAll();
 
@@ -262,4 +262,8 @@ $('.copy-button').on('mouseout', function () {
   let blockCopied = this.children[1];
   $(this).css('background-image', 'url("/assets/images/copy-button-grey.svg")')
   $(blockCopied).css('display', 'none')
+})
+
+$('.chevron-lg').on('click', function () {
+  $(this).toggleClass('chevron_down-lg')
 })

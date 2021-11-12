@@ -24,7 +24,7 @@
 .card-offinst {
   width: 350px;
   height: 230px;
-
+  border: 1px solid transparent;
   background: linear-gradient(90.83deg, #323239 1.71%, #2A3137 96.43%);
   border-radius: 15px;
 }
@@ -32,6 +32,7 @@
 .card-offinst:hover {
   background: linear-gradient(111.14deg, rgba(169, 224, 226, 0.15) 7.26%, rgba(1, 248, 168, 0.15) 63.94%);
   border-radius: 15px;
+  border: 1px solid #00D2A0;
 }
 
 
