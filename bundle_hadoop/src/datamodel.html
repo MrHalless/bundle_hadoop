@@ -1,0 +1,227 @@
+---
+layout: has_sidebar
+title: Data model
+---
+<div class="page-content">
+  <div class="content">
+    <div class="content-head">
+      <div class="content-head-info">
+        <div class="content-head-info__title">Data model</div>
+        <div class="content-head-info-update">
+          <div class="content-head-info-update__icon">
+            <div class="updated"></div>
+          </div>
+          <div class="content-head-info-update__text">
+            Updated on 15 Sept 2021
+          </div>
+        </div>
+      </div>
+      <div class="content-head-logo">
+        <div class="head-adh"></div>
+      </div>
+    </div>
+    <div class="content-head-info-description">
+      <div class="content-head-info-description__text">
+        HBase is a column-oriented database. Though it stores data in tables with rows and columns (as relational
+        databases do), do not look at these tables as sets of rows with a fixed scheme. Instead of it, it is helpful to
+        consider HBase tables as multi-dimensional maps.
+      </div>
+    </div>
+    <!-- content -->
+    <div class="content-body">
+      <div class="content-body-section">
+        <h2 class="content-body__title">
+          Basic objects
+        </h2>
+        <div class="content-body-section__text">
+          At first, let’s consider the data model terminology, used in HBase:
+        </div>
+        <ul class="custom-list-first">
+          <li>
+            Table. A set of multiply rows, that can have one or more columns, belonged to the fixed column families.
+            Each table scheme defines only column families.</li>
+          <li>Row. Consists of a row key and columns with values, associated with them. Rows are sorted alphabetically
+            by the row key, as they are stored.</li>
+          <li>Row key. Consists of a row key and columns with values, associated with them. Rows are sorted
+            alphabetically by the row key, as they are stored.</li>
+          <li>Column. Consists of a column family and a column qualifier, which are delimited by a colon character, for
+            example: cf:column1, cf:column2, etc.</li>
+          <li>Column family. A logical and physical grouping of columns and their values — often for performance
+            reasons. Column families are fixed at table creation and can’t be changed on fly. Nevertheless, each given
+            table row might not store anything in a given column family.</li>
+        </ul>
+        <div class="content-body-section__text-info">
+          A column family can have a set of storage properties, such as: whether its values should be cached in memory,
+          how its data is compressed or its row keys are encoded, time to live (TTL) and maximum number of stored
+          versions for values, etc.
+        </div>
+      </div>
+      <div class="block-tip">
+        <div class="block-tip-content">
+          <div class="block-tip-content__title">
+            CAUTION
+          </div>
+          <div class="block-tip-content__body">
+            It is not recommended to define more than three column families for each table.
+          </div>
+        </div>
+        <div class="block-tip-icon">
+          <div class="caution"></div>
+        </div>
+      </div>
+      <div class="content-body-section">
+        <ul class="custom-list-first">
+          <li>
+            Column qualifier. A column identifier, needed to provide the index for a given piece of data in a column
+            family. Though column families are fixed, column qualifiers are mutable: they can be changed on fly and
+            differ greatly between rows of the same table.</li>
+          <li>Cell. A combination of a row, a column family, and a column qualifier. It contains a data value and a
+            timestamp, which represents the current value version.</li>
+          <li>Timestamp. A version identifier of a value. By default, it represents the time on the RegionServer, when
+            this data value was written to HBase. You can also specify a different timestamp value.</li>
+          <li>Value. A piece of data, stored in HBase for a certain combination: &lt;Table, Row Key, Column Family,
+            Column Qualifier, Timestamp&gt;.</li>
+        </ul>
+      </div>
+      <div class="block-example">
+        <span>The Hbase data model can be remembered as a following key-value match:</span>
+        <span>&lt;Table, Row Key, Column Family, Column Qualifier, Timestamp&gt; &rarr; Value</span>
+      </div>
+      <div class="content-body-section">
+        <h2 class="content-body__title">
+          How it works
+        </h2>
+        <h2 class="content-body__title">
+          Example
+        </h2>
+        <div class="content-body-section__text">
+          This section describes HBase data model at the particular example.
+        </div>
+        <div class="content-body-section__text">
+          Suppose, that we need to store text articles. Each article can have basic attributes, that are changed very
+          rarely (author name, article header, creation datetime, etc.), and tags, that describe the article content and
+          help to perform text search among all articles (arch, concepts, tutorials, ref, etc.). Tags are modified more
+          often.
+        </div>
+        <div class="block-tip">
+          <div class="block-tip-content">
+            <div class="block-tip-content__title">
+              TIP
+            </div>
+            <div class="block-tip-content__body">
+              As data, corresponding to different column families, are stored separately, try to distribute it according
+              to the frequency of their use.
+            </div>
+          </div>
+          <div class="block-tip-icon">
+            <div class="tip"></div>
+          </div>
+        </div>
+        <div class="steps-content__code">
+          <pre><code class="language-shell">
+            {
+              "article1": {
+                "basic": {
+                  "author": {
+                    1635250534914: "Test author"
+                  },
+                  "header": {
+                    1639000000001: "Test article. Version 3",
+                      1637000000000: "Test article. Version 2",
+                        1635000034534: "Test article"
+                  }
+                },
+                "tags": {
+                  "arch": {
+                    1635250534915: true
+                  },
+                  "concepts": {
+                    1635250534913: true
+                  },
+                  "tutorials": {
+                    1635260774310: true
+                  }
+                }
+              },
+              "article2": {
+                "basic": {
+                  "author": {
+                    1789000000001: "Test author2"
+                  },
+                  "deprecated": {
+                    2021000000000: true
+                  },
+                  "header": {
+                    1789000000001: "Test article2"
+                  }
+                },
+                "tags": {
+                  "ref": {
+                    1800000456002: true
+                  }
+                }
+              }
+            }
+            </code></pre>
+          <div class="copy-button">
+            <div class="copy-button-tooltip">
+              <div class="copy-button-tooltip__text">Copy</div>
+            </div>
+            <div class="copy-button-tooltip-copied">
+              <div class="copy-button-tooltip-copied__text">Copied</div>
+            </div>
+          </div>
+        </div>
+        <div class="block-comment">
+          <ol>
+            <li>The top level of key/map pairs describes table rows: article1 and article2 are row keys, unique for each
+              row.</li>
+            <li>The second level describes column families, which are fixed for each table row: basic and tags.</li>
+            <li>The third level describes column qualifiers: author, header and deprecated — inside of the column family
+              basic; arch, concepts, tutorials and ref — inside of the column family tags. Column qualifiers are not
+              fixed, they can be added on fly. Their set can differ from one row to another.</li>
+            <li>The bottom level describes cells — pairs of timestamps and values. Thanks to timestamps, versioning of
+              values is supported.</li>
+          </ol>
+        </div>
+        <div class="content-body-section__text">
+          So, to get a specific data value, stored in HBase, you should know the following path: Table &rarr; Row Key
+          &rarr; Column Family &rarr; Column Qualifier &rarr; Timestamp. Without defining timestamps the most recent
+          data are received (with the latest timestamp). For example, if you get the value of the row with the key
+          article1 and the column basic:header, you&rsquo;ll catch the most recent value Test article. Version 3. But if
+          you additionally define the timestamp 1635000034534&thinsp;&mdash;&thinsp;you&rsquo;ll get the value Test
+          article.
+        </div>
+        <div class="content-body-section__text">
+          The main commands, based on the data model showed in this example, are described in the section <a
+            href="#">Quick start</a>.
+        </div>
+      </div>
+    </div>
+    <div class="found-mistake">
+      <div class="found-mistake__text">
+        Found a mistake? Seleсt text and press <span>Ctrl+Enter</span> to report it.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="change-pages">
+  <div class="change-pages-left">
+    <a href="#">
+      <div class="change-pages-left__button">
+      </div>
+      <div class="change-pages-left__text">
+        Architechure
+      </div>
+    </a>
+  </div>
+  <div class="change-pages-right">
+    <a href="#">
+      <div class="change-pages-right__text">
+        YARN and Resource manager
+      </div>
+      <div class="change-pages-right__button">
+      </div>
+    </a>
+  </div>
+</div>

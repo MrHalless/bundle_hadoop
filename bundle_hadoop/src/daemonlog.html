@@ -1,0 +1,157 @@
+---
+layout: has_sidebar
+title: Daemonlog
+---
+<div class="page-content">
+  <div class="content">
+    <div class="content-head">
+      <div class="content-head-info">
+        <div class="content-head-info__title">daemonlog</div>
+        <div class="content-head-info-update">
+          <div class="content-head-info-update__icon">
+            <div class="updated"></div>
+          </div>
+          <div class="content-head-info-update__text">
+            Updated on 15 Sept 2021
+          </div>
+        </div>
+      </div>
+      <div class="content-head-logo">
+        <div class="head-adh"></div>
+      </div>
+    </div>
+    <div class="content-head-info-description">
+      <div class="content-head-info-description__text">
+        Get/Set the log level for a Log identified by a qualified class name in the daemon dynamically. By default,
+        the command sends a HTTP request, but this can be overridden by using argument -protocol https to send HTTPS
+        request.
+      </div>
+      <div class="content-head-info-description__text">
+        Note that the setting is not permanent and will be reset when the daemon is restarted. This command works by
+        sending a HTTP/HTTPS request to the daemon’s internal Jetty servlet, so it supports the following daemons:
+      </div>
+    </div>
+    <!-- content -->
+    <div class="content-body">
+      <div class="content-body-section">
+        <ul class="custom-list-first">
+          <li>
+            Common
+            <ul class="custom-list-second">
+              <li>key management server</li>
+            </ul>
+          </li>
+          <li>HDFS
+            <ul class="custom-list-second">
+              <li>name node</li>
+              <li>secondary name node</li>
+              <li>data node</li>
+              <li>journal node</li>
+              <li>HttpFS server</li>
+            </ul>
+          </li>
+          <li>
+            YARN
+            <ul class="custom-list-second">
+              <li>resource manager</li>
+              <li>node manager</li>
+              <li>Timeline server</li>
+            </ul>
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div class="content-body-section">
+        <h3 class="content-body__info">
+          Usage
+        </h3>
+        <div class="content-body-section__text">
+          hadoop daemonlog <span class="dmmono">-getlevel &lt;host:port&gt; &lt;classname&gt; [-protocol
+            (http|https)]</span>
+        </div>
+        <div class="content-body-section__text">
+          or
+        </div>
+        <div class="content-body-section__text">
+          hadoop daemonlog <span class="dmmono">-setlevel &lt;host:port&gt; &lt;classname&gt; &lt;level&gt; [-protocol
+            (http|https)]</span>
+        </div>
+      </div>
+      <div class="content-body-section">
+        <h3 class="content-body__info">
+          Arguments
+        </h3>
+        <table class="table-arg">
+          <tbody>
+            <tr>
+              <td>
+                -getlevel host:port classname [-protocol (httphttps)]
+              </td>
+              <td>
+                Prints the log level of the log identified by a qualified classname, in the daemon running at host:port.
+                The -protocol flag specifies the protocol for connection
+              </td>
+            </tr>
+            <tr>
+              <td>-setlevel host:port classname level [-protocol (httphttps)]</td>
+              <td>Sets the log level of the log identified by a qualified classname, in the daemon running at host:port.
+                The -protocol flag specifies the protocol for connection</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="content-body-section">
+        <h3 class="content-body__info">
+          Example
+        </h3>
+        <div class="steps-content__code">
+          <pre><code class="language-shell">
+            $ bin/hadoop daemonlog -setlevel 127.0.0.1:9870 org.apache.
+            $ bin/hadoop daemonlog -getlevel 127.0.0.1:9870 org.apache.
+           </code></pre>
+          <div class="copy-button">
+            <div class="copy-button-tooltip">
+              <div class="copy-button-tooltip__text">Copy</div>
+            </div>
+            <div class="copy-button-tooltip-copied">
+              <div class="copy-button-tooltip-copied__text">Copied</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content-body-section">
+        <h3 class="content-body__info">
+          Exit Code
+        </h3>
+        <div class="content-body-section__text">
+          test
+        </div>
+      </div>
+    </div>
+    <div class="found-mistake">
+      <div class="found-mistake__text">
+        Found a mistake? Seleсt text and press <span>Ctrl+Enter</span> to report it.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="change-pages">
+  <div class="change-pages-left">
+    <a href="#">
+      <div class="change-pages-left__button">
+      </div>
+      <div class="change-pages-left__text">
+        Previous topic
+      </div>
+    </a>
+  </div>
+  <div class="change-pages-right">
+    <a href="#">
+      <div class="change-pages-right__text">
+        Next topic
+      </div>
+      <div class="change-pages-right__button">
+      </div>
+    </a>
+  </div>
+</div>
