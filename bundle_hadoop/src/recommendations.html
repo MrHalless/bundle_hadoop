@@ -1,0 +1,164 @@
+---
+layout: has_sidebar
+title: Recommendations
+---
+<div class="page-content">
+  <div class="content">
+    <div class="content-head">
+      <div class="content-head-info">
+        <div class="content-head-info__title">Recommendations</div>
+        <div class="content-head-info-update">
+          <div class="content-head-info-update__icon">
+            <div class="updated"></div>
+          </div>
+          <div class="content-head-info-update__text">
+            Updated on 15 Sept 2021
+          </div>
+        </div>
+      </div>
+      <div class="content-head-logo">
+        <div class="head-adh"></div>
+      </div>
+    </div>
+    <div class="content-head-info-description">
+      <div class="content-head-info-description__text">
+        In this table there are the most common recommendations based on the workload pattern for the ADH cluster.
+      </div>
+    </div>
+    <!-- content -->
+    <div class="content-body">
+      <div class="content-body-section">
+        <table class="table-6">
+          <thead>
+            <tr>
+              <th>Server</th>
+              <th>Load Pattern</th>
+              <th>Storage</th>
+              <th>CPU</th>
+              <th>RAM</th>
+              <th>Network</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="3">DataNodes</td>
+              <td>Balanced workload</td>
+              <td>12 Disks 2-3TB JBOD ZKFC</td>
+              <td>8 cores</td>
+              <td>128-256GB</td>
+              <td>1GB onboard, 2x10GbE interconnect</td>
+            </tr>
+            <tr>
+              <td>Compute-intensive workload</td>
+              <td>12 Disks 1-2TB JBOD</td>
+              <td>10 cores</td>
+              <td>128-256GB</td>
+              <td>10GB onboard, 2x10GbE interconnect</td>
+            </tr>
+            <tr>
+              <td>Storage-heavy workload</td>
+              <td>12 Disks 4+TB JBOD</td>
+              <td>8 cores</td>
+              <td>128-256GB</td>
+              <td>10GB onboard, 2x10GbE interconnect</td>
+            </tr>
+            <tr>
+              <td>NameNode</td>
+              <td>Balanced workload</td>
+              <td>4+ Disks 2-3TB RAID 10</td>
+              <td>8 cores</td>
+              <td>128-256GB</td>
+              <td>10GB onboard, 2x10GbE interconnect</td>
+            </tr>
+            <tr>
+              <td>Resource Manager/YARN</td>
+              <td>Balanced workload</td>
+              <td>4+ Disks 2-3TB RAID 10</td>
+              <td>8 cores</td>
+              <td>128-256GB</td>
+              <td>10GB onboard, 2x10GbE interconnect</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="content-body-section">
+        <h3 class="content-body__info">
+          Scalability
+        </h3>
+        <div class="content-body-section__text">
+          It is easy to scale a Hadoop cluster by adding new servers or whole server racks to the cluster and increasing
+          the memory in the NameNodes to deal with the rising load. This will generate a lot of “rebalancing traffic” at
+          first, but will deliver extra storage and computation. Because the NameNodes do matter, we recommend that you
+          pay the premiums for those machines.
+        </div>
+        <div class="content-body-section__text">
+          Use the following guidelines to scale your existing Hadoop cluster:
+        </div>
+        <div class="block-commands">
+          <ol>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Ensure there is potential free space in the data center near the Hadoop cluster. This space should be
+                able to accommodate the power budget for more racks.
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Plan the network to cope with more servers.
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                It might be possible to add more disks and RAM to the existing servers - and extra CPUs if the servers
+                have spare sockets. This can expand an existing cluster without adding more racks or network changes.
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                To perform a hardware upgrade in a live cluster can take considerable time and effort. We recommend that
+                you plan the expansion one server at a time.
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                CPU parts do not remain on the vendors price list forever. If you do plan to add a second CPU, consult
+                with your reseller on when they will cut the price of CPUs that your existing parts and buy these parts
+                when available. This typically takes at least 18 months time period.
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                You are likely to need more memory in the master servers.
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="found-mistake">
+      <div class="found-mistake__text">
+        Found a mistake? Seleсt text and press <span>Ctrl+Enter</span> to report it.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="change-pages">
+  <div class="change-pages-left">
+    <a href="#">
+      <div class="change-pages-left__button">
+      </div>
+      <div class="change-pages-left__text">
+        PAGE LEFT
+      </div>
+    </a>
+  </div>
+  <div class="change-pages-right">
+    <a href="#">
+      <div class="change-pages-right__text">
+        PAGE RIGHT
+      </div>
+      <div class="change-pages-right__button">
+      </div>
+    </a>
+  </div>
+</div>

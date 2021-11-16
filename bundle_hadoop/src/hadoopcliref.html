@@ -22,46 +22,208 @@ title: Hadoop CLI References
     </div>
     <div class="content-head-info-description">
       <div class="content-head-info-description__text">
-        TOPIC
+        Let’s explain difference between hadoop fs {args}, hadoop dfs {args} and hdfs dfs {args} commands.
       </div>
       <div class="content-head-info-description__text">
-        TOPIC
+        The fs parameter refers to a shared file system that can point to any file systems, such as local, HDFS, etc.
+        So, fs can be used when you are working with various file systems, such as Local FS, (S)FTP, S3, and others.
       </div>
+      <div class="content-head-info-description__text">
+        When you use the dfs parameter, you directly specify the interaction with HDFS.
+      </div>
+      <div class="block-tip">
+        <div class="block-tip-content">
+          <div class="block-tip-content__title">
+            NOTE
+          </div>
+          <div class="block-tip-content__body">
+            Currently, the hadoop dfs command is deprecated
+          </div>
+        </div>
+        <div class="block-tip-icon">
+          <div class="note"></div>
+        </div>
+      </div>
+      <div class="content-head-info-description__text">So, if you want to work only with HDFS, use the hdfs dfs command.
+        But,
+        if you need to access/transfer data between different file systems, hadoop fs as command is the right way.
+      </div>
+      <div class="content-head-info-description__text">All of the Hadoop commands and sub-projects follow the same basic
+        structure:</div>
     </div>
     <!-- content -->
     <div class="content-body">
-      <table class="table-2">
-        <thead>
-          <tr>
-            <th>Field</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>shellcommand</td>
-            <td>The command of the project being invoked. For example, Hadoop common uses hadoop, HDFS uses hdfs, and
-              YARN
-              uses yarn.</td>
-          </tr>
-          <tr>
-            <td>SHELL_OPTIONS</td>
-            <td>Options that the shell processes prior to executing Java.</td>
-          </tr>
-          <tr>
-            <td>COMMAND</td>
-            <td>Action to perform.</td>
-          </tr>
-          <tr>
-            <td>GENERIC_OPTIONS</td>
-            <td>The common set of options supported by multiple commands.</td>
-          </tr>
-          <tr>
-            <td>COMMAND_OPTIONS</td>
-            <td>Various command options for the Hadoop common sub-projects.</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="content-body-section">
+        <h3 class="content-body__info">
+          Usage
+        </h3>
+        <div class="steps-content__code">
+          <pre><code class="language-shell">$ shellcommand [SHELL_OPTIONS] [COMMAND] [GENERIC_OPTIONS]</code></pre>
+          <div class="copy-button">
+            <div class="copy-button-tooltip">
+              <div class="copy-button-tooltip__text">Copy</div>
+            </div>
+            <div class="copy-button-tooltip-copied">
+              <div class="copy-button-tooltip-copied__text">Copied</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content-body-section">
+        <h3 class="content-body__info">
+          Hadoop shell basic structure
+        </h3>
+        <table class="table-2">
+          <thead>
+            <tr>
+              <th>Field</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>shellcommand</td>
+              <td>The command of the project being invoked. For example, Hadoop common uses hadoop, HDFS uses hdfs, and
+                YARN
+                uses yarn.</td>
+            </tr>
+            <tr>
+              <td>SHELL_OPTIONS</td>
+              <td>Options that the shell processes prior to executing Java.</td>
+            </tr>
+            <tr>
+              <td>COMMAND</td>
+              <td>Action to perform.</td>
+            </tr>
+            <tr>
+              <td>GENERIC_OPTIONS</td>
+              <td>The common set of options supported by multiple commands.</td>
+            </tr>
+            <tr>
+              <td>COMMAND_OPTIONS</td>
+              <td>Various command options for the Hadoop common sub-projects.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="content-body-section__text">
+          All of the shell commands will accept a common set of options. For some commands, these options are ignored.
+          For example, passing ---hostnames on a command that only executes on a single host will be ignored.
+        </div>
+      </div>
+      <!-- section -->
+      <div class="content-body-section">
+        <h3 class="content-body__info">
+          Shell options
+        </h3>
+        <table class="table-2">
+          <thead>
+            <tr>
+              <th>SHELL_OPTION</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>--buildpaths</td>
+              <td>The command of the project being invoked. For example, Hadoop common uses hadoop, HDFS uses hdfs, and
+                YARN
+                uses yarn.</td>
+            </tr>
+            <tr>
+              <td>--config confdir</td>
+              <td>Options that the shell processes prior to executing Java.</td>
+            </tr>
+            <tr>
+              <td>--daemon mode</td>
+              <td>If the command supports daemonization (e.g., hdfs namenode), execute in the appropriate mode.
+                Supported modes are start to start the process in daemon mode, stop to stop the process, and status to
+                determine the active status of the process. status will return an LSB-compliant result code. If no
+                option is provided, commands that support daemonization will run in the foreground. For commands that do
+                not support daemonization, this option is ignored.</td>
+            </tr>
+            <tr>
+              <td>--debug</td>
+              <td>Enables shell level configuration debugging information.</td>
+            </tr>
+            <tr>
+              <td>--help</td>
+              <td>Shell script usage information.</td>
+            </tr>
+            <tr>
+              <td>--hostnames</td>
+              <td>When --workers is used, override the workers file with a space delimited list of hostnames where to
+                execute a multi-host subcommand. If --workers is not used, this option is ignored.</td>
+            </tr>
+            <tr>
+              <td>--hosts</td>
+              <td>When --workers is used, override the workers file with another file that contains a list of hostnames
+                where to execute a multi-host subcommand. If --workers is not used, this option is ignored.</td>
+            </tr>
+            <tr>
+              <td>--loglevel loglevel</td>
+              <td>Overrides the log level. Valid log levels are FATAL, ERROR, WARN, INFO, DEBUG, and TRACE. Default is
+                INFO.</td>
+            </tr>
+            <tr>
+              <td>--workers</td>
+              <td>If possible, execute this command on all hosts in the workers file.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="content-body-section__text">
+          Many subcommands honor a common set of configuration options to alter their behavior:
+        </div>
+      </div>
+      <!-- /section -->
+      <!-- section -->
+      <div class="content-body-section">
+        <h3 class="content-body__info">
+          Generic Options
+        </h3>
+        <table class="table-2">
+          <thead>
+            <tr>
+              <th>GENERIC_OPTION</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                -archives &lt;comma separated list of archives&gt;
+              </td>
+              <td>Specify comma separated archives to be unarchived on the compute machines. Applies only to job.</td>
+            </tr>
+            <tr>
+              <td>-conf &lt;configuration file&gt;
+              </td>
+              <td>Specify an application configuration file.</td>
+            </tr>
+            <tr>
+              <td>-D &lt;property&gt;=&lt;value&gt;</td>
+              <td>Use value for given property.</td>
+            </tr>
+            <tr>
+              <td>-files &lt;comma separated list of files&gt;</td>
+              <td>Specify comma separated files to be copied to the map reduce cluster. Applies only to job.</td>
+            </tr>
+            <tr>
+              <td>-fs file:/// or &lt;hdfs://namenode:port&gt;</td>
+              <td>Specify default filesystem URL to use. Overrides fs.defaultFS property from configurations.</td>
+            </tr>
+            <tr>
+              <td>-jt &lt;local&gt; or &lt;resourcemanager:port&gt;</td>
+              <td>Specify a ResourceManager. Applies only to job.</td>
+            </tr>
+            <tr>
+              <td>-libjars &lt;comma separated list of jars&gt;</td>
+              <td>Specify comma separated jar files to include in the classpath. Applies only to job.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- /section -->
+      <!-- section -->
       <div class="content-body-section">
         <div class="block-collapse">
           <h3 class="content-body__info">
@@ -77,39 +239,266 @@ title: Hadoop CLI References
         </div>
         <div class="collapse" id="block-card-user">
           <div class="block-card">
-            <div class="card-command user">
-              <div class="card-command-content">
-                <div class="card-command-content__title">
-                  archive
-                </div>
-                <div class="card-command-content__body">
-                  Creates a hadoop archive
-                </div>
-              </div>
-            </div>
-            <div class="card-command admin">
-              <div class="card-command-content">
-                <div class="card-command-content__title">
-                  daemonlog
-                </div>
-                <div class="card-command-content__body">
-                  Get/Set the log level
+            <a href="#">
+              <div class="card-command user">
+                <div class="card-command-content">
+                  <div class="card-command-content__title">
+                    archive
+                  </div>
+                  <div class="card-command-content__body">
+                    Creates a hadoop archive
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="card-command fs">
-              <div class="card-command-content">
-                <div class="card-command-content__title">
-                  archive
-                </div>
-                <div class="card-command-content__body">
-                  Creates a hadoop archive
+            </a>
+            <a href="#">
+              <div class="card-command admin">
+                <div class="card-command-content">
+                  <div class="card-command-content__title">
+                    daemonlog
+                  </div>
+                  <div class="card-command-content__body">
+                    Get/Set the log level
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
+            <a href="#">
+              <div class="card-command fs">
+                <div class="card-command-content">
+                  <div class="card-command-content__title">
+                    archive
+                  </div>
+                  <div class="card-command-content__body">
+                    Creates a hadoop archive
+                  </div>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
+      <!-- /section -->
+      <!-- section -->
+      <div class="content-body-section">
+        <div class="block-collapse">
+          <h3 class="content-body__info">
+            Administration Commands
+          </h3>
+          <a class="chevron-lg chevron_right-lg" role="button" data-toggle="collapse" data-target="#block-card-admin"
+            aria-expanded="false" aria-controls="block-card-admin">
+            <!-- <i ></i> -->
+          </a>
+        </div>
+        <div class="content-body-section__text">
+          Commands useful for administrators of a hadoop cluster.
+        </div>
+        <div class="collapse" id="block-card-admin">
+          <div class="block-card">
+            <a href="#">
+              <div class="card-command admin">
+                <div class="card-command-content">
+                  <div class="card-command-content__title">
+                    daemonlog
+                  </div>
+                  <div class="card-command-content__body">
+                    Get/Set the log level
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- /section -->
+      <!-- section -->
+      <div class="content-body-section">
+        <div class="block-collapse">
+          <h3 class="content-body__info">
+            FileSystem Commands
+          </h3>
+          <a class="chevron-lg chevron_right-lg" role="button" data-toggle="collapse" data-target="#block-card-fs"
+            aria-expanded="false" aria-controls="block-card-fs">
+            <!-- <i ></i> -->
+          </a>
+        </div>
+        <div class="collapse" id="block-card-fs">
+          <div class="block-card">
+            <a href="#">
+              <div class="card-command fs">
+                <div class="card-command-content">
+                  <div class="card-command-content__title">
+                    appendToFile
+                  </div>
+                  <div class="card-command-content__body">
+                    Append sources from local file system to the destination file system
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#">
+              <div class="card-command fs">
+                <div class="card-command-content">
+                  <div class="card-command-content__title">
+                    cat
+                  </div>
+                  <div class="card-command-content__body">
+                    Copies source paths to stdout
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#">
+              <div class="card-command fs">
+                <div class="card-command-content">
+                  <div class="card-command-content__title">
+                    checksum
+                  </div>
+                  <div class="card-command-content__body">
+                    Returns the checksum information of a file
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#">
+              <div class="card-command fs">
+                <div class="card-command-content">
+                  <div class="card-command-content__title">
+                    chgrp
+                  </div>
+                  <div class="card-command-content__body">
+                    Change group association of files
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#">
+              <div class="card-command fs">
+                <div class="card-command-content">
+                  <div class="card-command-content__title">
+                    chmod
+                  </div>
+                  <div class="card-command-content__body">
+                    Change the permission of files
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#">
+              <div class="card-command fs">
+                <div class="card-command-content">
+                  <div class="card-command-content__title">
+                    chown
+                  </div>
+                  <div class="card-command-content__body">
+                    Change the owner of files
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#">
+              <div class="card-command fs">
+                <div class="card-command-content">
+                  <div class="card-command-content__title">
+                    copyFromLocal
+                  </div>
+                  <div class="card-command-content__body">
+                    Identical to -put command
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#">
+              <div class="card-command fs">
+                <div class="card-command-content">
+                  <div class="card-command-content__title">
+                    copyToLocal
+                  </div>
+                  <div class="card-command-content__body">
+                    Identical to the -get command
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#">
+              <div class="card-command fs">
+                <div class="card-command-content">
+                  <div class="card-command-content__title">
+                    count
+                  </div>
+                  <div class="card-command-content__body">
+                    Count the number of directories and files
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="#">
+              <div class="card-command fs">
+                <div class="card-command-content">
+                  <div class="card-command-content__title">
+                    cp
+                  </div>
+                  <div class="card-command-content__body">
+                    Copy files from source to destination
+                  </div>
+                </div>
+              </div>
+            </a>
+            <!-- <a href="#">
+              <div class="card-command fs">
+                <div class="card-command-content">
+                  <div class="card-command-content__title">
+                    chgrp
+                  </div>
+                  <div class="card-command-content__body">
+                    Change group association of files
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#">
+              <div class="card-command fs">
+                <div class="card-command-content">
+                  <div class="card-command-content__title">
+                    chgrp
+                  </div>
+                  <div class="card-command-content__body">
+                    Change group association of files
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#">
+              <div class="card-command fs">
+                <div class="card-command-content">
+                  <div class="card-command-content__title">
+                    chgrp
+                  </div>
+                  <div class="card-command-content__body">
+                    Change group association of files
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="#">
+              <div class="card-command fs">
+                <div class="card-command-content">
+                  <div class="card-command-content__title">
+                    chgrp
+                  </div>
+                  <div class="card-command-content__body">
+                    Change group association of files
+                  </div>
+                </div>
+              </div>
+            </a> -->
+          </div>
+        </div>
+      </div>
+      <!-- /section -->
     </div>
     <div class="found-mistake">
       <div class="found-mistake__text">

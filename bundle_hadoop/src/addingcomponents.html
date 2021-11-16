@@ -1,0 +1,291 @@
+---
+layout: has_sidebar
+title: Adding components
+---
+<div class="page-content">
+  <div class="content">
+    <div class="content-head">
+      <div class="content-head-info">
+        <div class="content-head-info__title">Adding components</div>
+        <div class="content-head-info-update">
+          <div class="content-head-info-update__icon">
+            <div class="updated"></div>
+          </div>
+          <div class="content-head-info-update__text">
+            Updated on 15 Sept 2021
+          </div>
+        </div>
+      </div>
+      <div class="content-head-logo">
+        <div class="head-adh"></div>
+      </div>
+    </div>
+    <div class="content-head-info-description">
+      <div class="content-head-info-description__text">
+        In ADCM a component means a part of a service, that should be deployed on one or several cluster hosts.
+      </div>
+      <div class="content-head-info-description__text">
+        For example, HDFS service can consist of such components, as: DataNode, NameNode, Client, and others.
+      </div>
+    </div>
+    <!-- content -->
+    <div class="content-body">
+      <div class="content-body-section">
+        <div class="block-tip">
+          <div class="block-tip-content">
+            <div class="block-tip-content__title">
+              IMPORTANT
+            </div>
+            <div class="block-tip-content__body">
+              Initially, there are no components on any of cluster hosts — the distribution of components between hosts
+              should be performed manually.
+            </div>
+          </div>
+          <div class="block-tip-icon">
+            <div class="important"></div>
+          </div>
+        </div>
+        <div class="content-body-section__text">
+          The steps of adding components to hosts are listed below:
+        </div>
+        <div class="block-commands">
+          <ol>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                From the tab CLUSTERS switch to cluster configuring. To do this, click at the row with the added cluster
+                or click at the icon in the column Config. Both methods lead to the opening of the cluster menu.
+              </div>
+              <div class="content-body-image">
+                <img src="/assets/images/addcomp1.png" alt="">
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Open the tab Hosts - Components in the cluster menu.
+              </div>
+              <div class="block-tip">
+                <div class="block-tip-content">
+                  <div class="block-tip-content__title">
+                    NOTE
+                  </div>
+                  <div class="block-tip-content__body">
+                    The orange exclamation mark near the menu item Hosts - Components is displayed, when components
+                    distribution is needed.
+                  </div>
+                </div>
+                <div class="block-tip-icon">
+                  <div class="note"></div>
+                </div>
+              </div>
+              <div class="content-body-image">
+                <img src="/assets/images/addcomp2.png" alt="">
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                In the opened page distribute all necessary components between cluster hosts. To distribute components,
+                use one of the ways:
+              </div>
+              <ol>
+                <li class="steps-content">
+                  <div class="steps-content__text">
+                    Select a component in the Components column (by clicking at it) and then define all hosts for it in
+                    the
+                    Hosts column (by alternate clicking at each host).
+                  </div>
+                </li>
+                <div class="content-body-image">
+                  <img src="/assets/images/addcomp3.png" alt="">
+                </div>
+                <li class="steps-content">
+                  <div class="steps-content__text">
+                    Select a host in the Hosts column (by clicking at it) and define all components for it in the
+                    Components
+                    column (by alternate clicking at each component).
+                  </div>
+                </li>
+                <div class="content-body-image">
+                  <img src="/assets/images/addcomp3.png" alt="">
+                </div>
+              </ol>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="block-mandatory">
+  <h2 class="block-mandatory-title">
+    Mandatory and optional components
+  </h2>
+  <div class="content-body-section__text">
+    Each service can have mandatory and optional components:
+  </div>
+  <ul class="custom-list-first">
+    <li>
+      If the component is optional, it has a simple quantitative counter, placed to the right of its name — without the
+      symbol "/". This counter displays the number of hosts, assigned to the current component.
+    </li>
+  </ul>
+  <div class="content-body-image">
+    <img src="/assets/images/a.png" alt="">
+  </div>
+  <ul class="custom-list-first">
+    <li>If the component is mandatory, its quantitative counter contains the symbol "/". The first digit in the counter
+      (displayed before "/") shows the current number of assigned hosts, and the second digit (displayed after
+      "/") — the minimal required number of hosts.
+    </li>
+  </ul>
+  <div class="content-body-image">
+    <img src="/assets/images/b.png" alt="">
+  </div>
+  <div class="block-tip">
+    <div class="block-tip-content">
+      <div class="block-tip-content__title">
+        CAUTION
+      </div>
+      <div class="block-tip-content__body">
+        Without assigning necessary count of hosts to mandatory components, the service distribution map cannot be
+        saved.
+      </div>
+    </div>
+    <div class="block-tip-icon">
+      <div class="caution"></div>
+    </div>
+  </div>
+</div>
+<div class="page-content">
+  <div class="content">
+    <!-- content -->
+    <div class="content-body">
+      <div class="content-body-section">
+        <div class="content-body-section__text">
+          The examples of distribution components in ADH clusters, consisted of 3, 6, and 9 hosts, are described in the
+          table below. Examples are based on the Enterprise Edition of ADH.
+        </div>
+        <table class="table-3a">
+          <thead>
+            <tr>
+              <th>Host</th>
+              <th>Service</th>
+              <th>Component</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="3">Host1</td>
+              <td>Flink</td>
+              <td>
+                <span>Flink Client</span>
+                <span>Flink JobManager</span>
+                <span>Flink Task Manager</span>
+              </td>
+            </tr>
+            <tr>
+              <td>HBase</td>
+              <td>
+                <span>HBase Client</span>
+                <span>Hbase Region Server</span>
+              </td>
+            </tr>
+            <tr>
+              <td>HDFS</td>
+              <td>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+              </td>
+            </tr>
+            <tr>
+              <td rowspan="3">Host2</td>
+              <td>Flink</td>
+              <td>
+                <span>Flink Client</span>
+                <span>Flink JobManager</span>
+                <span>Flink Task Manager</span>
+              </td>
+            </tr>
+            <tr>
+              <td>HBase</td>
+              <td>
+                <span>1</span>
+                <span>2</span>
+              </td>
+            </tr>
+            <tr>
+              <td>HDFS</td>
+              <td>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="test" rowspan="5">Host3</td>
+              <td>Flink</td>
+              <td>
+                <span>Flink Client</span>
+                <span>Flink JobManager</span>
+                <span>Flink Task Manager</span>
+              </td>
+            </tr>
+            <tr>
+              <td>HBase</td>
+              <td>
+                <span>1</span>
+                <span>2</span>
+              </td>
+            </tr>
+            <tr>
+              <td>HDFS</td>
+              <td>
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+              </td>
+            </tr>
+            <tr>
+              <td>HBase2</td>
+              <td>
+                <span>1</span>
+                <span>2</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="found-mistake">
+      <div class="found-mistake__text">
+        Found a mistake? Seleсt text and press <span>Ctrl+Enter</span> to report it.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="change-pages">
+  <div class="change-pages-left">
+    <a href="#">
+      <div class="change-pages-left__button">
+      </div>
+      <div class="change-pages-left__text">
+        Adding hosts to a cluster
+      </div>
+    </a>
+  </div>
+  <div class="change-pages-right">
+    <a href="#">
+      <div class="change-pages-right__text">
+        Service configuring
+      </div>
+      <div class="change-pages-right__button">
+      </div>
+    </a>
+  </div>
+</div>

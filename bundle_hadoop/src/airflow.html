@@ -1,0 +1,178 @@
+---
+layout: has_sidebar
+title: Airflow
+---
+<div class="page-content">
+  <div class="content">
+    <div class="content-head">
+      <div class="content-head-info">
+        <div class="content-head-info__title">Airflow configuration parameters</div>
+        <div class="content-head-info-update">
+          <div class="content-head-info-update__icon">
+            <div class="updated"></div>
+          </div>
+          <div class="content-head-info-update__text">
+            Updated on 15 Sept 2021
+          </div>
+        </div>
+      </div>
+      <div class="content-head-logo">
+        <div class="head-adh"></div>
+      </div>
+    </div>
+    <!-- content -->
+    <div class="content-body">
+      <div class="content-body-section">
+        <h3 class="content-body__info">
+          Airflow environment
+        </h3>
+        <table class="table-3">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Description</th>
+              <th>Default value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>airflow_dir</td>
+              <td>Airflow home directory</td>
+              <td>/srv/airflow/home</td>
+            </tr>
+            <tr>
+              <td>db_dir</td>
+              <td>Metastore DB datafile location</td>
+              <td>/srv/airflow/metastore</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="content-body-section">
+        <h3 class="content-body__info">
+          airflow.cfg
+        </h3>
+        <table class="table-3">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Description</th>
+              <th>Default value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>db_user</td>
+              <td>User to connect metadata DB</td>
+              <td>airflow</td>
+            </tr>
+            <tr>
+              <td>db_password</td>
+              <td>Password to connect metadata DB</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>db_root_password</td>
+              <td>Root password to connect metadata DB</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>db_port</td>
+              <td>Port to connect metadata DB</td>
+              <td>3307</td>
+            </tr>
+            <tr>
+              <td>server_port</td>
+              <td>The port on which to run the web server</td>
+              <td>8080</td>
+            </tr>
+            <tr>
+              <td>flower_port</td>
+              <td>This defines the port that Celery Flower runs on</td>
+              <td>5555</td>
+            </tr>
+            <tr>
+              <td>worker_port</td>
+              <td>When you start an airflow worker, airflow starts a tiny web server subprocess to serve the workers
+                local log files to the airflow main web server, who then builds pages and sends them to users. This
+                defines the port on which the logs are served. It needs to be unused, and open visible from the main web
+                server to connect into the workers</td>
+              <td>8793</td>
+            </tr>
+            <tr>
+              <td>redis_port</td>
+              <td>This defines the port that Redis runs on</td>
+              <td>6379</td>
+            </tr>
+            <tr>
+              <td>fernet_key</td>
+              <td>Secret key to save connection passwords in the db</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="content-body-section">
+        <h3 class="content-body__info">
+          External database
+        </h3>
+        <table class="table-3">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Description</th>
+              <th>Default value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Database type</td>
+              <td>External database type. Possible values: PostgreSQL, MySQL</td>
+              <td>PostgreSQL</td>
+            </tr>
+            <tr>
+              <td>db_host</td>
+              <td>External database host</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>db_custom_port</td>
+              <td>External database port</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>db_name</td>
+              <td>External database name</td>
+              <td>airflow </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="found-mistake">
+      <div class="found-mistake__text">
+        Found a mistake? Seleсt text and press <span>Ctrl+Enter</span> to report it.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="change-pages">
+  <div class="change-pages-left">
+    <a href="#">
+      <div class="change-pages-left__button">
+      </div>
+      <div class="change-pages-left__text">
+        Glossary
+      </div>
+    </a>
+  </div>
+  <div class="change-pages-right">
+    <a href="#">
+      <div class="change-pages-right__text">
+        Flink
+      </div>
+      <div class="change-pages-right__button">
+      </div>
+    </a>
+  </div>
+</div>
