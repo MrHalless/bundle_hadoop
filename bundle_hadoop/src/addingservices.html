@@ -1,0 +1,275 @@
+---
+layout: has_sidebar
+title: Adding services
+---
+<div class="page-content">
+  <div class="content">
+    <div class="content-head">
+      <div class="content-head-info">
+        <div class="content-head-info__title">Adding services</div>
+        <div class="content-head-info-update">
+          <div class="content-head-info-update__icon">
+            <div class="updated"></div>
+          </div>
+          <div class="content-head-info-update__text">
+            Updated on 15 Sept 2021
+          </div>
+        </div>
+      </div>
+      <div class="content-head-logo">
+        <div class="head-adh"></div>
+      </div>
+    </div>
+    <div class="content-head-info-description">
+      <div class="content-head-info-description__text">
+        In ADCM a service means a software that performs some function.
+      </div>
+    </div>
+    <!-- content -->
+    <div class="content-body">
+      <div class="content-body-section">
+        <div class="content-body-section__text">
+          Examples of services for ADH clusters: HDFS, HBase, Hive, etc.
+        </div>
+        <div class="content-body-section__text">
+          The steps for adding services to a cluster are listed below:
+        </div>
+        <div class="block-commands">
+          <ol>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                From the tab CLUSTERS switch to cluster configuring. To do this, click at the row with the added cluster
+                or click at the icon in the column Config. Both methods lead to the opening of the cluster menu.
+              </div>
+            </li>
+            <div class="content-body-image">
+              <img src="/assets/images/addserv1.png" alt="">
+            </div>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Open the tab Services in the cluster menu and click Add services.
+              </div>
+            </li>
+            <div class="content-body-image">
+              <img src="/assets/images/addserv2.png" alt="">
+            </div>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                In the opened form select the services, that should be added to the cluster, and click Add. The brief
+                description of available services is listed below.
+              </div>
+              <div class="content-body-section">
+                <h3 class="content-body__info">
+                  Services that can be added to ADH cluster
+                </h3>
+                <table class="table-2">
+                  <thead>
+                    <tr>
+                      <th>Service</th>
+                      <th>Purpose</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><a href="">Airflow</a></td>
+                      <td>A service, used for creation, scheduling and monitoring workflows in the form of Directed
+                        Acyclic
+                        Graphs (DAGs) of tasks. Can be used in Hadoop clusters for building ETL/ELT-processes</td>
+                    </tr>
+                    <tr>
+                      <td><a href="">Flink</a></td>
+                      <td>A distributed platform, used in high-load Big Data applications for analyzing data, stored in
+                        Hadoop
+                        clusters. It can be used in different streaming use cases: event-driven applications, stream and
+                        batch
+                        analytics, data pipelines and ETL, etc.</td>
+                    </tr>
+                    <tr>
+                      <td><a href="">HBase</a></td>
+                      <td> A non-relational, distributed database, written in Java and used on top of HDFS. Belongs to
+                        the class
+                        of column-oriented key-value storages. It is useful for random, real-time read/write access to
+                        Big Data
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="">HDFS</a></td>
+                      <td>A distributed file system, used in Hadoop clusters for storing large files. Provides the
+                        possibility
+                        of streaming access to information, distributed block-by-block across cluster nodes</td>
+                    </tr>
+                    <tr>
+                      <td><a href="">Hive</a></td>
+                      <td>A software, designed for building data warehouses (DWH) and analyzing Big Data. It runs on top
+                        of HDFS
+                        and other compatible systems, such as <a href="">Apache HBase</a> . It facilitates writing,
+                        reading and
+                        managing large datasets, stored in distributed systems</td>
+                    </tr>
+                    <tr>
+                      <td>Monitoring</td>
+                      <td>A service, that should be added, if monitoring of ADH cluster is planned. See more details
+                        about
+                        monitoring configuring there</td>
+                    </tr>
+                    <tr>
+                      <td><a href="">MySQL</a></td>
+                      <td>Maria DB — a relational database, created on the base of MySQL and compatible with it. Some
+                        MariaDB
+                        commands and interfaces are closer to NoSQL, than to SQL. For example, it provides such data
+                        storage
+                        types, as: ColumnStore — for column data storage and distributed architecture support,
+                        OQGRAPH — for
+                        storing tree and graph structures, etc.</td>
+                    </tr>
+                    <tr>
+                      <td><a href="">Solr</a></td>
+                      <td>A search platform, based on the <a href="">Apache Lucene</a> project. Its main features
+                        include
+                        full-text search, faceted search, highlighting search results, distributed indexing, integration
+                        with
+                        databases, processing documents with a complex format (Word, PDF, etc.), load-balanced querying,
+                        centralized configuration and others</td>
+                    </tr>
+                    <tr>
+                      <td><a href="">Spark</a></td>
+                      <td>Spark 2.x. A fast analytics engine, used for large-scale data processing and compatible with
+                        Hadoop
+                        data. It can run in Hadoop clusters through YARN or Spark’s standalone mode. It can process data
+                        in
+                        HDFS, HBase, Cassandra, Hive, and other Hadoop input formats. Supports both batch processing and
+                        new
+                        workloads like streaming, machine learning, interactive queries, etc.</td>
+                    </tr>
+                    <tr>
+                      <td><a href="">Spark3</a></td>
+                      <td>Spark 3.x. Compared to the Spark 2.x version, it offers such new features, as: adaptive
+                        execution of
+                        Spark SQL, Dynamic Partition Pruning (DPP), graph processing, enhanced support for Deep
+                        Learning, and
+                        others</td>
+                    </tr>
+                    <tr>
+                      <td><a href="">Sqoop</a></td>
+                      <td>A service, designed to transfer bulk data between Hadoop and relational databases or
+                        mainframes. You
+                        can use it, for example, to import data from MySQL, Oracle or other relational database
+                        management
+                        systems (RDBMS) to Hadoop clusters, convert the data in a certain way, and then export the data
+                        back to
+                        the RDBMS</td>
+                    </tr>
+                    <tr>
+                      <td><a href="">YARN</a></td>
+                      <td>A service, needed for managing cluster resources and scheduling/monitoring jobs. Uses a
+                        special daemon
+                        (ResourceManager), that abstracts all the computing resources of the cluster and manages their
+                        provision
+                        to distributed applications</td>
+                    </tr>
+                    <tr>
+                      <td><a href="">Zeppelin</a></td>
+                      <td>A service, that plays a role of a web-based notebook and enables interactive data analytics.
+                        Allows to
+                        create queries to data in Hadoop clusters and display the results in the form of tables, graphs,
+                        charts,
+                        etc.</td>
+                    </tr>
+                    <tr>
+                      <td><a href="">Zookeeper</a></td>
+                      <td>A centralized coordination service for distributed applications. It is used in Hadoop clusters
+                        for
+                        failure detection, active NameNode election, health monitoring, session management, etc.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="content-body-section">
+                <div class="content-body-section__text">
+                  The minimal set of services, required for ADH clusters, is described below:
+                </div>
+                <ul class="custom-list-first">
+                  <li>
+                    Zookeeper</li>
+                  <li>HDFS</li>
+                  <li>
+                    YARN
+                  </li>
+                  <li>
+                    HBase
+                  </li>
+                </ul>
+                <div class="content-body-image">
+                  <img src="/assets/images/addserv3.png" alt="">
+                </div>
+              </div>
+              <div class="block-tip">
+                <div class="block-tip-content">
+                  <div class="block-tip-content__title">
+                    CAUTION
+                  </div>
+                  <div class="block-tip-content__body">
+                    Currently, it is impossible to delete from a cluster a service, that has already been added to it.
+                    Be
+                    careful while adding services.
+                  </div>
+                </div>
+                <div class="block-tip-icon">
+                  <div class="caution"></div>
+                </div>
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                In the opened form select the services, that should be added to the cluster, and click Add. The brief
+                description of available services is listed below.
+              </div>
+              <div class="content-body-image">
+                <img src="/assets/images/addserv4.png" alt="">
+              </div>
+              <div class="block-tip">
+                <div class="block-tip-content">
+                  <div class="block-tip-content__title">
+                    NOTE
+                  </div>
+                  <div class="block-tip-content__body">
+                    You can also add services later. The process of adding new services to already running cluster does
+                    not differ from installing a service from scratch.
+                  </div>
+                </div>
+                <div class="block-tip-icon">
+                  <div class="note"></div>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="found-mistake">
+      <div class="found-mistake__text">
+        Found a mistake? Seleсt text and press <span>Ctrl+Enter</span> to report it.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="change-pages">
+  <div class="change-pages-left">
+    <a href="#">
+      <div class="change-pages-left__button">
+      </div>
+      <div class="change-pages-left__text">
+        PAGE LEFT
+      </div>
+    </a>
+  </div>
+  <div class="change-pages-right">
+    <a href="#">
+      <div class="change-pages-right__text">
+        PAGE RIGHT
+      </div>
+      <div class="change-pages-right__button">
+      </div>
+    </a>
+  </div>
+</div>

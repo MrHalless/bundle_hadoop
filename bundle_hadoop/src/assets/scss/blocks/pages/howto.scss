@@ -44,12 +44,14 @@
 .content-howto a:focus-visible {
   outline: none;
 
-  .content-howto-card__title {
-    color: #00D2A0;
-  }
+  // .content-howto-card__title {
+  //   color: #00D2A0;
+  // }
 
   .content-howto-card {
-    background: linear-gradient(111.14deg, rgba(169, 224, 226, 0.15) 7.26%, rgba(1, 248, 168, 0.15) 63.94%);
+    border: 1px solid #1997E8;
+    box-sizing: border-box;
+    border-radius: 15px;
   }
 
 }

@@ -160,67 +160,57 @@ title: Offline installation
           SELinux should be disabled for ADCM. To do it permanently, set SELINUX=disabled in the file
           /etc/selinux/config and restart your system.
         </div>
-        <div class="block-commands">
-          <ul>
-            <li class="steps-content">
-              <div class="steps-content__text">
-                You can edit the file, using vi or vim command:
-              </div>
-              <div class="steps-content__code">
-                <pre><code class="language-shell">$ vi /etc/selinux/config</code></pre>
-                <div class="copy-button">
-                  <div class="copy-button-tooltip">
-                    <div class="copy-button-tooltip__text">Copy</div>
-                  </div>
-                  <div class="copy-button-tooltip-copied">
-                    <div class="copy-button-tooltip-copied__text">Copied</div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="steps-content">
-              <div class="steps-content__text">
-                The content of the changed file should look like this:
-              </div>
-              <div class="steps-content__code">
-                <pre><code class="language-shell">
-                  # This file controls the state of SELinux on the system.
-                  # SELINUX= can take one of these three values:
-                  #       enforcing - SELinux security policy is enforced.
-                  #       permissive - SELinux prints warnings instead of enforcing.
-                  #       disabled - SELinux is fully disabled.
-                  SELINUX=disabled
-                  # SELINUXTYPE= type of policy in use. Possible values are:
-                  #       targeted - Only targeted network daemons are protected.
-                  #       strict - Full SELinux protection.
-                  SELINUXTYPE=targeted</code></pre>
-                <div class="copy-button">
-                  <div class="copy-button-tooltip">
-                    <div class="copy-button-tooltip__text">Copy</div>
-                  </div>
-                  <div class="copy-button-tooltip-copied">
-                    <div class="copy-button-tooltip-copied__text">Copied</div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="steps-content">
-              <div class="steps-content__text">
-                You can also disable SELinux temporarily, running the following command on each host of your cluster:
-              </div>
-              <div class="steps-content__code">
-                <pre><code class="language-shell">$ setenforce 0</code></pre>
-                <div class="copy-button">
-                  <div class="copy-button-tooltip">
-                    <div class="copy-button-tooltip__text">Copy</div>
-                  </div>
-                  <div class="copy-button-tooltip-copied">
-                    <div class="copy-button-tooltip-copied__text">Copied</div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
+        <div class="content-body-section__text">
+          You can edit the file, using vi or vim command:
+        </div>
+        <div class="steps-content__code">
+          <pre><code class="language-shell">$ vi /etc/selinux/config</code></pre>
+          <div class="copy-button">
+            <div class="copy-button-tooltip">
+              <div class="copy-button-tooltip__text">Copy</div>
+            </div>
+            <div class="copy-button-tooltip-copied">
+              <div class="copy-button-tooltip-copied__text">Copied</div>
+            </div>
+          </div>
+        </div>
+        <div class="content-body-section__text">
+          The content of the changed file should look like this:
+        </div>
+        <div class="steps-content__code">
+          <pre><code class="language-shell">
+            # This file controls the state of SELinux on the system.
+            # SELINUX= can take one of these three values:
+            #       enforcing - SELinux security policy is enforced.
+            #       permissive - SELinux prints warnings instead of enforcing.
+            #       disabled - SELinux is fully disabled.
+            SELINUX=disabled
+            # SELINUXTYPE= type of policy in use. Possible values are:
+            #       targeted - Only targeted network daemons are protected.
+            #       strict - Full SELinux protection.
+            SELINUXTYPE=targeted</code></pre>
+          <div class="copy-button">
+            <div class="copy-button-tooltip">
+              <div class="copy-button-tooltip__text">Copy</div>
+            </div>
+            <div class="copy-button-tooltip-copied">
+              <div class="copy-button-tooltip-copied__text">Copied</div>
+            </div>
+          </div>
+        </div>
+        <div class="content-body-section__text">
+          You can also disable SELinux temporarily, running the following command on each host of your cluster:
+        </div>
+        <div class="steps-content__code">
+          <pre><code class="language-shell">$ setenforce 0</code></pre>
+          <div class="copy-button">
+            <div class="copy-button-tooltip">
+              <div class="copy-button-tooltip__text">Copy</div>
+            </div>
+            <div class="copy-button-tooltip-copied">
+              <div class="copy-button-tooltip-copied__text">Copied</div>
+            </div>
+          </div>
         </div>
         <div class="content-body-section__text">
           But permanently disabling SELinux, that it does not restart on each system reboot, is strongly recommended.
@@ -371,87 +361,75 @@ title: Offline installation
           After installing and running ADCM, its web interface should become available on the port 8000 of the deployed
           container. You can check it, using these commands:
         </div>
-        <div class="block-commands">
-          <ul>
-            <li class="steps-content">
-              <div class="steps-content__text">
-                The command netstat — to display information about the port listening.
-              </div>
-              <div class="steps-content__code">
-                <pre><code class="language-shell">$ sudo netstat -ntpl | grep 8000</code></pre>
-                <div class="copy-button">
-                  <div class="copy-button-tooltip">
-                    <div class="copy-button-tooltip__text">Copy</div>
-                  </div>
-                  <div class="copy-button-tooltip-copied">
-                    <div class="copy-button-tooltip-copied__text">Copied</div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="steps-content">
-              <div class="steps-content__text">
-                The output data should look like this:
-              </div>
-              <div class="steps-content__code">
-                <pre><code class="language-shell">tcp6       0      0 :::8000                 :::*      </code></pre>
-                <div class="copy-button">
-                  <div class="copy-button-tooltip">
-                    <div class="copy-button-tooltip__text">Copy</div>
-                  </div>
-                  <div class="copy-button-tooltip-copied">
-                    <div class="copy-button-tooltip-copied__text">Copied</div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="steps-content">
-              <div class="steps-content__text">
-                The command curl — to check the URL connection.
-              </div>
-              <div class="steps-content__code">
-                <pre><code class="language-shell">$ curl http://localhost:8000</code></pre>
-                <div class="copy-button">
-                  <div class="copy-button-tooltip">
-                    <div class="copy-button-tooltip__text">Copy</div>
-                  </div>
-                  <div class="copy-button-tooltip-copied">
-                    <div class="copy-button-tooltip-copied__text">Copied</div>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="steps-content">
-              <div class="steps-content__text">
-                The output data should look like this:
-              </div>
-              <div class="steps-content__code">
-                <pre><code class="language-html">      
-                  &lt;!doctype html&gt;
-                  &lt;html lang=&quot;en&quot;&gt;
-                  &lt;head&gt;
-                  &lt;meta charset=&quot;utf-8&quot;&gt;
-                  &lt;title&gt;Arenadata Cluster Manager&lt;/title&gt;
-                  &lt;base href=&quot;/&quot;&gt;
-                  <!-- &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt; -->
-                  <!-- &lt;link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;assets/favicon.ico&quot;&gt; -->
-                  <!-- &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.10db6328264e0907c52f.css&quot;&gt;&lt;/head&gt; -->
-                  &lt;body&gt;
-                  &lt;app-root&gt;&lt;/app-root&gt;
-                  <!-- &lt;script src=&quot;runtime-es2015.7eb406ed18bf0258cd35.js&quot; type=&quot;module&quot;&gt;&lt;/script&gt;&lt;script src=&quot;runtime-es5.7eb406ed18bf0258cd35.js&quot; nomodule defer&gt;&lt;/script&gt;&lt;script src=&quot;polyfills-es5.2e224d70daec4412d3c2.js&quot; nomodule defer&gt;&lt;/script&gt;&lt;script src=&quot;polyfills-es2015.37e0553ac06970d6a5b5.js&quot; type=&quot;module&quot;&gt;&lt;/script&gt;&lt;script src=&quot;main-es2015.39851da0ebf9ed6fec45.js&quot; type=&quot;module&quot;&gt;&lt;/script&gt;&lt;script src=&quot;main-es5.39851da0ebf9ed6fec45.js&quot; nomodule defer&gt;&lt;/script&gt;&lt;/body&gt; -->
-                  &lt;/html&gt;   
-                </code></pre>
-                <div class="copy-button">
-                  <div class="copy-button-tooltip">
-                    <div class="copy-button-tooltip__text">Copy</div>
-                  </div>
-                  <div class="copy-button-tooltip-copied">
-                    <div class="copy-button-tooltip-copied__text">Copied</div>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
+        <div class="content-body-section__text">
+          The command netstat — to display information about the port listening.
+        </div>
+        <div class="steps-content__code">
+          <pre><code class="language-shell">$ sudo netstat -ntpl | grep 8000</code></pre>
+          <div class="copy-button">
+            <div class="copy-button-tooltip">
+              <div class="copy-button-tooltip__text">Copy</div>
+            </div>
+            <div class="copy-button-tooltip-copied">
+              <div class="copy-button-tooltip-copied__text">Copied</div>
+            </div>
+          </div>
+        </div>
+        <div class="content-body-section__text">
+          The command netstat — to display information about the port listening.
+        </div>
+        <div class="steps-content__code">
+          <pre><code class="language-shell">tcp6       0      0 :::8000                 :::*      </code></pre>
+          <div class="copy-button">
+            <div class="copy-button-tooltip">
+              <div class="copy-button-tooltip__text">Copy</div>
+            </div>
+            <div class="copy-button-tooltip-copied">
+              <div class="copy-button-tooltip-copied__text">Copied</div>
+            </div>
+          </div>
+        </div>
+        <div class="content-body-section__text">
+          The command curl — to check the URL connection.
+        </div>
+        <div class="steps-content__code">
+          <pre><code class="language-shell">$ curl http://localhost:8000</code></pre>
+          <div class="copy-button">
+            <div class="copy-button-tooltip">
+              <div class="copy-button-tooltip__text">Copy</div>
+            </div>
+            <div class="copy-button-tooltip-copied">
+              <div class="copy-button-tooltip-copied__text">Copied</div>
+            </div>
+          </div>
+        </div>
+        <div class="content-body-section__text">
+          The output data should look like this:
+        </div>
+        <div class="steps-content__code">
+          <pre><code class="language-html">      
+            &lt;!doctype html&gt;
+            &lt;html lang=&quot;en&quot;&gt;
+            &lt;head&gt;
+            &lt;meta charset=&quot;utf-8&quot;&gt;
+            &lt;title&gt;Arenadata Cluster Manager&lt;/title&gt;
+            &lt;base href=&quot;/&quot;&gt;
+            <!-- &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt; -->
+            <!-- &lt;link rel=&quot;icon&quot; type=&quot;image/x-icon&quot; href=&quot;assets/favicon.ico&quot;&gt; -->
+            <!-- &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.10db6328264e0907c52f.css&quot;&gt;&lt;/head&gt; -->
+            &lt;body&gt;
+            &lt;app-root&gt;&lt;/app-root&gt;
+            <!-- &lt;script src=&quot;runtime-es2015.7eb406ed18bf0258cd35.js&quot; type=&quot;module&quot;&gt;&lt;/script&gt;&lt;script src=&quot;runtime-es5.7eb406ed18bf0258cd35.js&quot; nomodule defer&gt;&lt;/script&gt;&lt;script src=&quot;polyfills-es5.2e224d70daec4412d3c2.js&quot; nomodule defer&gt;&lt;/script&gt;&lt;script src=&quot;polyfills-es2015.37e0553ac06970d6a5b5.js&quot; type=&quot;module&quot;&gt;&lt;/script&gt;&lt;script src=&quot;main-es2015.39851da0ebf9ed6fec45.js&quot; type=&quot;module&quot;&gt;&lt;/script&gt;&lt;script src=&quot;main-es5.39851da0ebf9ed6fec45.js&quot; nomodule defer&gt;&lt;/script&gt;&lt;/body&gt; -->
+            &lt;/html&gt;   
+          </code></pre>
+          <div class="copy-button">
+            <div class="copy-button-tooltip">
+              <div class="copy-button-tooltip__text">Copy</div>
+            </div>
+            <div class="copy-button-tooltip-copied">
+              <div class="copy-button-tooltip-copied__text">Copied</div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="content-body-section">

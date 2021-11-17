@@ -160,106 +160,877 @@ title: Adding components
     <!-- content -->
     <div class="content-body">
       <div class="content-body-section">
-        <div class="content-body-section__text">
+        <div class="content-body-section__text pt-36">
           The examples of distribution components in ADH clusters, consisted of 3, 6, and 9 hosts, are described in the
           table below. Examples are based on the Enterprise Edition of ADH.
         </div>
-        <table class="table-3a">
-          <thead>
-            <tr>
-              <th>Host</th>
-              <th>Service</th>
-              <th>Component</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td rowspan="3">Host1</td>
-              <td>Flink</td>
-              <td>
-                <span>Flink Client</span>
-                <span>Flink JobManager</span>
-                <span>Flink Task Manager</span>
-              </td>
-            </tr>
-            <tr>
-              <td>HBase</td>
-              <td>
-                <span>HBase Client</span>
-                <span>Hbase Region Server</span>
-              </td>
-            </tr>
-            <tr>
-              <td>HDFS</td>
-              <td>
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>4</span>
-                <span>5</span>
-              </td>
-            </tr>
-            <tr>
-              <td rowspan="3">Host2</td>
-              <td>Flink</td>
-              <td>
-                <span>Flink Client</span>
-                <span>Flink JobManager</span>
-                <span>Flink Task Manager</span>
-              </td>
-            </tr>
-            <tr>
-              <td>HBase</td>
-              <td>
-                <span>1</span>
-                <span>2</span>
-              </td>
-            </tr>
-            <tr>
-              <td>HDFS</td>
-              <td>
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>4</span>
-                <span>5</span>
-              </td>
-            </tr>
-            <tr>
-              <td class="test" rowspan="5">Host3</td>
-              <td>Flink</td>
-              <td>
-                <span>Flink Client</span>
-                <span>Flink JobManager</span>
-                <span>Flink Task Manager</span>
-              </td>
-            </tr>
-            <tr>
-              <td>HBase</td>
-              <td>
-                <span>1</span>
-                <span>2</span>
-              </td>
-            </tr>
-            <tr>
-              <td>HDFS</td>
-              <td>
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>4</span>
-                <span>5</span>
-              </td>
-            </tr>
-            <tr>
-              <td>HBase2</td>
-              <td>
-                <span>1</span>
-                <span>2</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="block-select">
+          <div class="block-select-head">
+            <div class="block-select-head__text">
+              Show selection for
+            </div>
+            <div class="block-select-head list-group" id="list-tab" role="tablist">
+              <a class="block-select-buttons active" id="list-3hosts-list" data-toggle="list" href="#list-3hosts"
+                role="tab" aria-controls="list-3hosts">
+                <!-- <div class="adh-round-icon"></div> -->
+                3 hosts
+              </a>
+              <a class="block-select-buttons" id="list-6hosts-list" data-toggle="list" href="#list-6hosts" role="tab"
+                aria-controls="list-6hosts">6 hosts</a>
+              <a class="block-select-buttons" id="list-9hosts-list" data-toggle="list" href="#list-9hosts" role="tab"
+                aria-controls="list-9hosts">9 hosts</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="list-3hosts" role="tabpanel" aria-labelledby="list-3hosts">
+              <table class="table-3a">
+                <thead>
+                  <tr>
+                    <th>Host</th>
+                    <th>Service</th>
+                    <th>Component</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td rowspan="11">Host1</td>
+                    <td>Flink</td>
+                    <td>
+                      <span>Flink Client</span>
+                      <span>Flink JobManager</span>
+                      <span>Flink Task Manager</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>HBase</td>
+                    <td>
+                      <span>HBase Client</span>
+                      <span>Hbase Region Server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>HDFS</td>
+                    <td>
+                      <span>HDFS Client</span>
+                      <span>HDFS DataNode</span>
+                      <span>HDFS JournalNode</span>
+                      <span>HDFS NameNode</span>
+                      <span>HDFS ZKFC</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Hive</td>
+                    <td>
+                      <span>Hive Client</span>
+                      <span>Hive Metastore</span>
+                      <span>Hive Tez</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Monitoring</td>
+                    <td>
+                      <span>Monitoring Diamond</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Solr</td>
+                    <td>
+                      <span>Solr Server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Spark</td>
+                    <td>
+                      <span>Spark Client</span>
+                      <span>Spark History server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Spark3</td>
+                    <td>
+                      <span>Spark3 Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Sqoop</td>
+                    <td>
+                      <span>Sqoop Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>YARN</td>
+                    <td>
+                      <span>MapReduce History server</span>
+                      <span>YARN Client</span>
+                      <span>YARN NodeManager</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Zookeeper</td>
+                    <td>
+                      <span>Zookeeper Server</span>
+                    </td>
+                  </tr>
+                  <!--  -->
+                  <tr>
+                    <td rowspan="13">Host2</td>
+                    <td>Airflow</td>
+                    <td>
+                      <span>Airflow Metastore</span>
+                      <span>Airflow Server</span>
+                      <span>Airflow broker</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Flink</td>
+                    <td>
+                      <span>Flink Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>HBase</td>
+                    <td>
+                      <span>HBase Client</span>
+                      <span>HBase Master server</span>
+                      <span>HBase Phoenix query server</span>
+                      <span>HBase RegionServer</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>HDFS</td>
+                    <td>
+                      <span>HDFS Client</span>
+                      <span>HDFS DataNode</span>
+                      <span>HDFS HttpFS server</span>
+                      <span>HDFS JournalNode</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Hive</td>
+                    <td>
+                      <span>Hive Client</span>
+                      <span>Hive HiveServer2</span>
+                      <span>Hive Tez</span>
+                      <span>Hive TezUI</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Monitoring</td>
+                    <td>
+                      <span>Monitoring Diamond</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Solr</td>
+                    <td>
+                      <span>Solr Server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Spark</td>
+                    <td>
+                      <span>Spark Client</span>
+                      <span>Spark Livy server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Spark3</td>
+                    <td>
+                      <span>Spark3 Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Sqoop</td>
+                    <td>
+                      <span>Sqoop Client</span>
+                      <span>Sqoop Metastore</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>YARN</td>
+                    <td>
+                      <span>YARN Client</span>
+                      <span>YARN NodeManager</span>
+                      <span>YARN ResourceManager</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Zeppelin</td>
+                    <td>
+                      <span>Zeppelin Server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Zookeeper</td>
+                    <td>
+                      <span>Zookeeper Server</span>
+                    </td>
+                  </tr>
+                  <!--  -->
+                  <tr>
+                    <td class="border-l" rowspan="12">Host3</td>
+                    <td>Flink</td>
+                    <td>
+                      <span>Flink Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>HBase</td>
+                    <td>
+                      <span>HBase Client</span>
+                      <span>HBase RegionServer</span>
+                      <span>HBase Thrift2 server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>HDFS</td>
+                    <td>
+                      <span>HDFS Client</span>
+                      <span>HDFS DataNode</span>
+                      <span>HDFS JournalNode</span>
+                      <span>HDFS NameNode</span>
+                      <span>HDFS ZKFC</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Hive</td>
+                    <td>
+                      <span>Hive Client</span>
+                      <span>Hive Tez</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Monitoring</td>
+                    <td>
+                      <span>Monitoring Diamond</span>
+                      <span>Monitoring jmxtrans</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>MySQL</td>
+                    <td>
+                      <span>MySQL Master server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Solr</td>
+                    <td>
+                      <span>Solr Server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Spark</td>
+                    <td>
+                      <span>Spark Client</span>
+                      <span>Spark Thrift server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Spark3</td>
+                    <td>
+                      <span>Spark3 Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Sqoop</td>
+                    <td>
+                      <span>Sqoop Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>YARN</td>
+                    <td>
+                      <span>YARN Client</span>
+                      <span>YARN NodeManager</span>
+                      <span>YARN Timeline server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Zookeeper</td>
+                    <td>
+                      <span>Zookeeper Server</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="tab-pane fade " id="list-6hosts" role="tabpanel" aria-labelledby="list-6hosts">
+              <table class="table-3a">
+                <thead>
+                  <tr>
+                    <th>Host</th>
+                    <th>Service</th>
+                    <th>Component</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td rowspan="11">Host1</td>
+                    <td>Flink</td>
+                    <td>
+                      <span>Flink Client</span>
+                      <span>Flink JobManager</span>
+                      <span>Flink Task Manager</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>HBase</td>
+                    <td>
+                      <span>HBase Client</span>
+                      <span>Hbase Region Server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>HDFS</td>
+                    <td>
+                      <span>HDFS Client</span>
+                      <span>HDFS DataNode</span>
+                      <span>HDFS JournalNode</span>
+                      <span>HDFS NameNode</span>
+                      <span>HDFS ZKFC</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Hive</td>
+                    <td>
+                      <span>Hive Client</span>
+                      <span>Hive Metastore</span>
+                      <span>Hive Tez</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Monitoring</td>
+                    <td>
+                      <span>Monitoring Diamond</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Solr</td>
+                    <td>
+                      <span>Solr Server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Spark</td>
+                    <td>
+                      <span>Spark Client</span>
+                      <span>Spark History server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Spark3</td>
+                    <td>
+                      <span>Spark3 Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Sqoop</td>
+                    <td>
+                      <span>Sqoop Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>YARN</td>
+                    <td>
+                      <span>MapReduce History server</span>
+                      <span>YARN Client</span>
+                      <span>YARN NodeManager</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Zookeeper</td>
+                    <td>
+                      <span>Zookeeper Server</span>
+                    </td>
+                  </tr>
+                  <!--  -->
+                  <tr>
+                    <td rowspan="13">Host2</td>
+                    <td>Airflow</td>
+                    <td>
+                      <span>Airflow Metastore</span>
+                      <span>Airflow Server</span>
+                      <span>Airflow broker</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Flink</td>
+                    <td>
+                      <span>Flink Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>HBase</td>
+                    <td>
+                      <span>HBase Client</span>
+                      <span>HBase Master server</span>
+                      <span>HBase Phoenix query server</span>
+                      <span>HBase RegionServer</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>HDFS</td>
+                    <td>
+                      <span>HDFS Client</span>
+                      <span>HDFS DataNode</span>
+                      <span>HDFS HttpFS server</span>
+                      <span>HDFS JournalNode</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Hive</td>
+                    <td>
+                      <span>Hive Client</span>
+                      <span>Hive HiveServer2</span>
+                      <span>Hive Tez</span>
+                      <span>Hive TezUI</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Monitoring</td>
+                    <td>
+                      <span>Monitoring Diamond</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Solr</td>
+                    <td>
+                      <span>Solr Server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Spark</td>
+                    <td>
+                      <span>Spark Client</span>
+                      <span>Spark Livy server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Spark3</td>
+                    <td>
+                      <span>Spark3 Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Sqoop</td>
+                    <td>
+                      <span>Sqoop Client</span>
+                      <span>Sqoop Metastore</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>YARN</td>
+                    <td>
+                      <span>YARN Client</span>
+                      <span>YARN NodeManager</span>
+                      <span>YARN ResourceManager</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Zeppelin</td>
+                    <td>
+                      <span>Zeppelin Server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Zookeeper</td>
+                    <td>
+                      <span>Zookeeper Server</span>
+                    </td>
+                  </tr>
+                  <!--  -->
+                  <tr>
+                    <td class="border-l" rowspan="12">Host3</td>
+                    <td>Flink</td>
+                    <td>
+                      <span>Flink Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>HBase</td>
+                    <td>
+                      <span>HBase Client</span>
+                      <span>HBase RegionServer</span>
+                      <span>HBase Thrift2 server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>HDFS</td>
+                    <td>
+                      <span>HDFS Client</span>
+                      <span>HDFS DataNode</span>
+                      <span>HDFS JournalNode</span>
+                      <span>HDFS NameNode</span>
+                      <span>HDFS ZKFC</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Hive</td>
+                    <td>
+                      <span>Hive Client</span>
+                      <span>Hive Tez</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Monitoring</td>
+                    <td>
+                      <span>Monitoring Diamond</span>
+                      <span>Monitoring jmxtrans</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>MySQL</td>
+                    <td>
+                      <span>MySQL Master server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Solr</td>
+                    <td>
+                      <span>Solr Server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Spark</td>
+                    <td>
+                      <span>Spark Client</span>
+                      <span>Spark Thrift server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Spark3</td>
+                    <td>
+                      <span>Spark3 Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Sqoop</td>
+                    <td>
+                      <span>Sqoop Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>YARN</td>
+                    <td>
+                      <span>YARN Client</span>
+                      <span>YARN NodeManager</span>
+                      <span>YARN Timeline server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Zookeeper</td>
+                    <td>
+                      <span>Zookeeper Server</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="tab-pane fade " id="list-9hosts" role="tabpanel" aria-labelledby="list-9hosts">
+              <table class="table-3a">
+                <thead>
+                  <tr>
+                    <th>Host</th>
+                    <th>Service</th>
+                    <th>Component</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td rowspan="11">Host1</td>
+                    <td>Flink</td>
+                    <td>
+                      <span>Flink Client</span>
+                      <span>Flink JobManager</span>
+                      <span>Flink Task Manager</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>HBase</td>
+                    <td>
+                      <span>HBase Client</span>
+                      <span>Hbase Region Server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>HDFS</td>
+                    <td>
+                      <span>HDFS Client</span>
+                      <span>HDFS DataNode</span>
+                      <span>HDFS JournalNode</span>
+                      <span>HDFS NameNode</span>
+                      <span>HDFS ZKFC</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Hive</td>
+                    <td>
+                      <span>Hive Client</span>
+                      <span>Hive Metastore</span>
+                      <span>Hive Tez</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Monitoring</td>
+                    <td>
+                      <span>Monitoring Diamond</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Solr</td>
+                    <td>
+                      <span>Solr Server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Spark</td>
+                    <td>
+                      <span>Spark Client</span>
+                      <span>Spark History server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Spark3</td>
+                    <td>
+                      <span>Spark3 Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Sqoop</td>
+                    <td>
+                      <span>Sqoop Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>YARN</td>
+                    <td>
+                      <span>MapReduce History server</span>
+                      <span>YARN Client</span>
+                      <span>YARN NodeManager</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Zookeeper</td>
+                    <td>
+                      <span>Zookeeper Server</span>
+                    </td>
+                  </tr>
+                  <!--  -->
+                  <tr>
+                    <td rowspan="13">Host2</td>
+                    <td>Airflow</td>
+                    <td>
+                      <span>Airflow Metastore</span>
+                      <span>Airflow Server</span>
+                      <span>Airflow broker</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Flink</td>
+                    <td>
+                      <span>Flink Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>HBase</td>
+                    <td>
+                      <span>HBase Client</span>
+                      <span>HBase Master server</span>
+                      <span>HBase Phoenix query server</span>
+                      <span>HBase RegionServer</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>HDFS</td>
+                    <td>
+                      <span>HDFS Client</span>
+                      <span>HDFS DataNode</span>
+                      <span>HDFS HttpFS server</span>
+                      <span>HDFS JournalNode</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Hive</td>
+                    <td>
+                      <span>Hive Client</span>
+                      <span>Hive HiveServer2</span>
+                      <span>Hive Tez</span>
+                      <span>Hive TezUI</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Monitoring</td>
+                    <td>
+                      <span>Monitoring Diamond</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Solr</td>
+                    <td>
+                      <span>Solr Server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Spark</td>
+                    <td>
+                      <span>Spark Client</span>
+                      <span>Spark Livy server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Spark3</td>
+                    <td>
+                      <span>Spark3 Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Sqoop</td>
+                    <td>
+                      <span>Sqoop Client</span>
+                      <span>Sqoop Metastore</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>YARN</td>
+                    <td>
+                      <span>YARN Client</span>
+                      <span>YARN NodeManager</span>
+                      <span>YARN ResourceManager</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Zeppelin</td>
+                    <td>
+                      <span>Zeppelin Server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Zookeeper</td>
+                    <td>
+                      <span>Zookeeper Server</span>
+                    </td>
+                  </tr>
+                  <!--  -->
+                  <tr>
+                    <td class="border-l" rowspan="12">Host3</td>
+                    <td>Flink</td>
+                    <td>
+                      <span>Flink Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>HBase</td>
+                    <td>
+                      <span>HBase Client</span>
+                      <span>HBase RegionServer</span>
+                      <span>HBase Thrift2 server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>HDFS</td>
+                    <td>
+                      <span>HDFS Client</span>
+                      <span>HDFS DataNode</span>
+                      <span>HDFS JournalNode</span>
+                      <span>HDFS NameNode</span>
+                      <span>HDFS ZKFC</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Hive</td>
+                    <td>
+                      <span>Hive Client</span>
+                      <span>Hive Tez</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Monitoring</td>
+                    <td>
+                      <span>Monitoring Diamond</span>
+                      <span>Monitoring jmxtrans</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>MySQL</td>
+                    <td>
+                      <span>MySQL Master server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Solr</td>
+                    <td>
+                      <span>Solr Server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Spark</td>
+                    <td>
+                      <span>Spark Client</span>
+                      <span>Spark Thrift server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Spark3</td>
+                    <td>
+                      <span>Spark3 Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Sqoop</td>
+                    <td>
+                      <span>Sqoop Client</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>YARN</td>
+                    <td>
+                      <span>YARN Client</span>
+                      <span>YARN NodeManager</span>
+                      <span>YARN Timeline server</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Zookeeper</td>
+                    <td>
+                      <span>Zookeeper Server</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content-body-section">
+        <div class="block-commands">
+          <ol class="start4">
+            <li class="steps-content">
+              <div class="steps-content__text">
+                After components distribution is completed, click Save.
+              </div>
+            </li>
+            <div class="content-body-image">
+              <img src="/assets/images/addcomp4.png" alt="">
+            </div>
+          </ol>
+        </div>
+        <div class="block-tip">
+          <div class="block-tip-content">
+            <div class="block-tip-content__title">
+              NOTE
+            </div>
+            <div class="block-tip-content__body">
+              Notice, that after successful components distribution the orange exclamation mark near the menu item Hosts
+              - Components stops displaying.
+            </div>
+          </div>
+          <div class="block-tip-icon">
+            <div class="note"></div>
+          </div>
+        </div>
+        <div class="content-body-image">
+          <img src="/assets/images/addcomp5.png" alt="">
+        </div>
       </div>
     </div>
     <div class="found-mistake">
