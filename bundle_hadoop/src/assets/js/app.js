@@ -254,3 +254,18 @@ $('.chevron-lg').on('click', function () {
 })
 
 
+
+
+
+
+$('.block-howto-card').on('click', function () {
+  console.log($(this.children[0].children[0]));
+  $(this.children[0].children[0]).toggleClass('text-green')
+  $(this).toggleClass('card-open')
+})
+
+
+$('.block-howto-card__text').on('click', function (event) {
+  event.stopPropagation();
+})
+

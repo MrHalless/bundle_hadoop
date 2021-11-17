@@ -1601,3 +1601,93 @@ span.dmmono {
 .pt-36 {
   padding-top: 36px;
 }
+
+.block-howto {
+  padding: 24px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.block-howto-card {
+  width: 100%;
+  background: #323239;
+
+
+  border: 1px solid #353E47;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 16px 0 16px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.block-howto-card.card-open {
+  .card-chevron {
+
+    width: 12px;
+    height: 8px;
+    background-image: url("/assets/images/card_greens_arrow.svg");
+  }
+}
+
+.block-howto-card.card-open:hover {
+  .block-howto-card__text a {
+    color: #00D2A0;
+  }
+
+  .card-chevron {
+    width: 12px;
+    height: 8px;
+    background-image: url("/assets/images/card_greens_arrow.svg");
+  }
+
+  .block-howto-card__text a:hover {
+    color: #1997E8;
+    text-decoration: underline;
+  }
+
+  border: 1px solid transparent;
+  background: rgba(127, 130, 133, 0.2);
+  border-radius: 5px;
+}
+
+.block-howto-card:hover {
+  .block-howto-card__text a {
+    color: #1997E8;
+  }
+
+  .card-chevron {
+    background-image: url("/assets/images/card_blue_arrow.svg");
+  }
+
+  border: 1px solid transparent;
+  background: rgba(127, 130, 133, 0.2);
+  border-radius: 5px;
+}
+
+
+
+.block-howto-card__text a:hover {
+  text-decoration: underline;
+  color: #1997E8;
+  cursor: pointer;
+}
+
+
+.text-green {
+  color: #00D2A0;
+}
+
+.card-chevron {
+  margin-right: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 8px;
+  height: 12px;
+  background-image: url("/assets/images/card_offwhite_arrow.svg");
+}
