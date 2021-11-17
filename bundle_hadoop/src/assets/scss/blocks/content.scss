@@ -883,6 +883,15 @@
   // 
 }
 
+.content-body-image a {
+  outline: none;
+  // 
+}
+
+.content-body-image a:hover {
+  cursor: zoom-in;
+}
+
 .content-body-image img {
   box-sizing: border-box;
   border-radius: 15px;
