@@ -636,7 +636,7 @@
 
 .steps-content__code {
   position: relative;
-  margin: 16px 0;
+  margin: 32px 0;
 }
 
 .steps-content__code pre code {
@@ -757,7 +757,7 @@
 }
 
 .content-body__title {
-  margin-top: 48px;
+  margin-top: 24px;
   font-style: normal;
   font-weight: bold;
   font-size: 30px;
@@ -768,6 +768,7 @@
 
 
 .content-body__info {
+  margin-top: 18px;
   font-style: normal;
   font-weight: 500;
   font-size: 25px;

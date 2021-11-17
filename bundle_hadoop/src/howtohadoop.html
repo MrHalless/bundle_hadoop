@@ -1,0 +1,140 @@
+---
+layout: has_sidebar
+title: How To! Arenadata Hadoop
+---
+<div class="page-content">
+  <div class="content">
+    <div class="content-head">
+      <div class="content-head-info">
+        <div class="content-head-info__title">How To! Arenadata Hadoop</div>
+        <div class="content-head-info-update">
+          <div class="content-head-info-update__icon">
+            <div class="updated"></div>
+          </div>
+          <div class="content-head-info-update__text">
+            Updated on 15 Sept 2021
+          </div>
+        </div>
+      </div>
+      <div class="content-head-logo">
+        <div class="head-adh"></div>
+      </div>
+    </div>
+    <!-- content -->
+    <div class="content-body">
+      <div class="content-body-section">
+        <h2 class="content-body__title">
+          How to protect files in HDFS
+        </h2>
+        <div class="content-body-section__text">
+          To protect files in HDFS, you can use two methods:
+        </div>
+        <ul class="custom-list-first">
+          <li>
+            Access control list (ACL)</li>
+          <li>File permissions</li>
+        </ul>
+        <div class="content-body-section__text">
+          Check the info below where we try to explain how these methods are working.
+        </div>
+      </div>
+      <div class="content-body-section">
+        <h3 class="content-body__info">
+          File permissions
+        </h3>
+        <div class="content-body-section__text">
+          In HDFS, you can restrict access to files or directories via a standard model - POSIX.
+        </div>
+      </div>
+      <div class="content-body-section">
+        <h3 class="content-body__info">
+          Access control list
+        </h3>
+        <div class="content-body-section__text">
+          Access control list - is a list with access permission for files or/and directories. ACL grants us a more
+          flexible and visual view of how to assign permission for HDFS objects.
+        </div>
+        <div class="content-body-section__text">
+          You can use ACL if you need set permission for the different users (group) on a same file or directory, as an
+          example.
+        </div>
+        <div class="block-commands">
+          <ol>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Add the below property in the hdfs-site.xml file:
+              </div>
+              <div class="steps-content__code">
+                <pre><code class="language-shell">
+                  &lt;property&gt;
+                    &lt;name&gt;dfs.namenode.acls.enabled&lt;/name&gt;
+                    &lt;value&gt;true&lt;/value&gt;
+                    &lt;/property&gt;
+                </code></pre>
+                <div class="copy-button">
+                  <div class="copy-button-tooltip">
+                    <div class="copy-button-tooltip__text">Copy</div>
+                  </div>
+                  <div class="copy-button-tooltip-copied">
+                    <div class="copy-button-tooltip-copied__text">Copied</div>
+                  </div>
+                </div>
+              </div>
+              <div class="block-tip">
+                <div class="block-tip-content">
+                  <div class="block-tip-content__title">
+                    NOTE
+                  </div>
+                  <div class="block-tip-content__body">
+                    To edit Arenadata Hadoop configuration files, we are recommended using our standalone product -
+                    Arenadata Cluster Manager (ADCM).
+                  </div>
+                  <div class="block-tip-content__body">
+                    For any additional help, please, go to the page [TODO:xref to ADCM guide].
+                  </div>
+                </div>
+                <div class="block-tip-icon">
+                  <div class="note"></div>
+                </div>
+              </div>
+            </li>
+            <li class="steps-content">
+              <div class="steps-content__text">
+                Reset your HDFS service to make changes in the configuration:
+              </div>
+              <div class="content-body-section__text">
+                In ADCM select Hadoop cluster &rarr; Services &rarr; HDFS &rarr; Actions and then click [ Reconfig and
+                restart ] to run reconfiguration task.
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="found-mistake">
+      <div class="found-mistake__text">
+        Found a mistake? Seleсt text and press <span>Ctrl+Enter</span> to report it.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="change-pages">
+  <div class="change-pages-left">
+    <a href="#">
+      <div class="change-pages-left__button">
+      </div>
+      <div class="change-pages-left__text">
+        Hadoop
+      </div>
+    </a>
+  </div>
+  <div class="change-pages-right">
+    <a href="#">
+      <div class="change-pages-right__text">
+        HBase
+      </div>
+      <div class="change-pages-right__button">
+      </div>
+    </a>
+  </div>
+</div>
