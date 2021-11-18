@@ -10,11 +10,13 @@
 pre code.hljs {
   display: block;
   overflow-x: auto;
-  padding: 32px 36px 32px 72px;
+  overflow-y: hidden;
+  // width: inherit;
+  // padding: 32px 36px 32px 72px;
 }
 
 code.hljs {
-  padding: 3px 5px
+  // padding: 3px 5px
 }
 
 .hljs {
