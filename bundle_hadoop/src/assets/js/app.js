@@ -52,23 +52,30 @@ function changeIcon(icon) {
   $(changeIcon).toggleClass("active");
 }
 
-// createnewblocksidebar
-
 function changeContent() {
 
   if ($(".sidebar").hasClass("close-sm")) {
     $(".nav-links_item").on("click", function () {
-      let checkFlag = $(this.parentElement.querySelector('.is_parent')).hasClass('active');
-      if (!checkFlag) {
-        $(this.parentElement.querySelector('.is_parent')).removeClass('active');
-        $('.tooltip-top-left').removeClass('active')
-      } else {
-        $('.is_parent').removeClass('active')
-        $('.is_parent').css('visibility', 'visible');
-        $('.tooltip-top-left').removeClass('active');
-        $(this.children[0]).addClass('active')
-        $(this.parentElement.querySelector('.is_parent')).addClass('active');
+
+      if ($(".sidebar").hasClass("close-sm")) {
+        let checkFlag = $(this.parentElement.querySelector('.is_parent')).hasClass('active');
+        if (!checkFlag) {
+          $(this.parentElement.querySelector('.is_parent')).removeClass('active');
+          removeClassActiveIcon(this);
+          // $('.tooltip-top-left').removeClass('active')
+        } else {
+          $('.is_parent').removeClass('active')
+          $('.is_parent').css('visibility', 'visible');
+
+          // сюда функцию
+          removeClassActiveIcon(this);
+
+          // $('.tooltip-top-left').removeClass('active');
+          $(this.children[0]).addClass('active')
+          $(this.parentElement.querySelector('.is_parent')).addClass('active');
+        }
       }
+
 
     });
 
@@ -168,6 +175,17 @@ $(".sbar").on("click", function () {
   changeContent();
 });
 
+function removeClassActiveIcon(item) {
+  let icons = $(item.parentElement.parentElement)[0].children;
+
+  for (let i = 0; i < icons.length; i++) {
+    let items = icons[i].querySelector('.nav-links_item');
+    if (items) {
+      // console.log(items.children[0]);
+      $(items.children[0]).removeClass('active');
+    }
+  }
+}
 
 function checkOpenSbar() {
   let checkOpenSbar = $(".sbar").hasClass("sbar-open");
