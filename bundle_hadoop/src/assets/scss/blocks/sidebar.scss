@@ -85,6 +85,7 @@
 
 .nav-links_item__text.active {
   color: #00d2a0;
+  visibility: visible;
 }
 
 .nav-links_item_parent {
@@ -107,6 +108,7 @@
 
   .chevron.active {
     background-image: url("/assets/images/card_greens_arrow.svg");
+    visibility: visible;
   }
 }
 
@@ -125,6 +127,7 @@
 // }
 
 .nav-links_item_parent a.active {
+  visibility: visible;
   color: #00d2a0;
 }
 
@@ -166,6 +169,7 @@
 
 .is_parent.active {
   display: block;
+  visibility: visible;
 }
 
 .over-y {
@@ -199,6 +203,7 @@
   width: 12px;
   height: 12px;
   background-image: url("/assets/images/card_greens_arrow.svg");
+  visibility: visible;
 }
 
 .getstarted {
@@ -390,6 +395,13 @@
   border: 1px solid #353e47;
   box-sizing: border-box;
   border-radius: 10px;
+
+  visibility: hidden;
+}
+
+.sidebar.close-sm .is_parent.active {
+  visibility: visible;
+  // display: block;
 }
 
 .sidebar.close-sm .nav-links-li {

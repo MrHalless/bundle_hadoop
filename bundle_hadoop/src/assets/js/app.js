@@ -17,6 +17,7 @@ $(".nav-links_item_parent").on("click", function () {
   $(needActiveLink).toggleClass("active");
   let needActiveIcon = item.querySelector(".is_parent");
   $(needActiveIcon).toggleClass("active");
+
 });
 
 function closeChildren(link) {
@@ -54,87 +55,85 @@ function changeIcon(icon) {
 // createnewblocksidebar
 
 function changeContent() {
+
   if ($(".sidebar").hasClass("close-sm")) {
-    // console.log("yes");
+    $(".nav-links_item").on("click", function () {
+      let checkFlag = $(this.parentElement.querySelector('.is_parent')).hasClass('active');
+      if (!checkFlag) {
+        $(this.parentElement.querySelector('.is_parent')).removeClass('active');
+        $('.tooltip-top-left').removeClass('active')
+      } else {
+        $('.is_parent').removeClass('active')
+        $('.is_parent').css('visibility', 'visible');
+        $('.tooltip-top-left').removeClass('active');
+        $(this.children[0]).addClass('active')
+        $(this.parentElement.querySelector('.is_parent')).addClass('active');
+      }
+
+    });
+
     let closeLink = $(".sidebar.close-sm")[0].children[1].children[0].children;
     for (let i = 0; i < closeLink.length; i++) {
       $(closeLink[i]).on("click", function (event) {
         event.stopPropagation();
-        // if ($(".sidebar").hasClass("close-sm")) {
+
+
+
         $(".nav-links_item_parent").on("click", function (event) {
           event.stopPropagation();
 
-          let currentLi = this.parentElement.querySelector(
-            ".nav-links_item_parent"
-          );
-          // console.log(currentLi);
-          // console.log($(currentLi.children[0]).attr("href"));
-          let currentLink = $(currentLi.children[0]).attr("href");
-          let currentTitle = currentLi.children[0].innerText;
-          let isParentBlock = this.parentElement.querySelector(".is_parent");
-          // console.log(isParentBlock.parentElement.parentElement);
-          let checkBackTitle = $(isParentBlock.children[0]).hasClass(
-            "backtitle"
-          );
-          if (checkBackTitle) {
-            $(isParentBlock.querySelector(".backtitle")).css("display", "none");
-            if ($(isParentBlock.querySelector(".backtitle")).css("display") == "none" && $(".sidebar").hasClass("close-sm")) {
-
-              $(isParentBlock.querySelector(".backtitle")).css("display", "flex");
-            } else {
-              $(isParentBlock.querySelector(".backtitle")).css("display") == "none"
-            }
-          } else {
-            $(isParentBlock).prepend(`<li class="backtitle">
-                <a href="${currentLink}">${currentTitle}</a>
-                <i class="backicon"></i>
-                </li>`);
-
-            let LinksBackTitle = $('.backtitle');
-            console.log(LinksBackTitle);
-            for (let i = 0; i < LinksBackTitle.length; i++) {
-              $(LinksBackTitle[i].children[0]).on('click', function (event) {
-                event.stopPropagation();
-              });
-            }
-            // $('.backtitle').one('click', function (event) {
-            //   event.stopPropagation();
-            // })
-
-
-          }
-
-          // console.log(this.parentElement.parentElement);
-          // console.log(this.parentElement.children[1]);
-
-          $(this.parentElement.parentElement).css('visibility', 'hidden');
-          $(this.parentElement.children[1]).css('visibility', 'visible');
-
-
-          $(".backtitle").on("click", function (event) {
-            // console.log("test");
-            event.stopPropagation();
-            // console.log(this);
-            let changeItem = this.parentElement.parentElement.querySelector(
+          if ($(".sidebar").hasClass("close-sm")) {
+            let currentLi = this.parentElement.querySelector(
               ".nav-links_item_parent"
             );
-            $(this.parentElement).removeClass("active");
-            $(changeItem.children[0]).removeClass("active");
-            $(changeItem.children[1]).removeClass("active");
-            $(changeItem.parentElement.parentElement).css('visibility', 'visible')
+            let currentLink = $(currentLi.children[0]).attr("href");
+            let currentTitle = currentLi.children[0].innerText;
+            let isParentBlock = this.parentElement.querySelector(".is_parent");
+            let checkBackTitle = $(isParentBlock.children[0]).hasClass(
+              "backtitle"
+            );
+            if (checkBackTitle) {
+              $(isParentBlock.querySelector(".backtitle")).css("display", "none");
+              if ($(isParentBlock.querySelector(".backtitle")).css("display") == "none" && $(".sidebar").hasClass("close-sm")) {
 
-            // тут должны закрыть текущий блок. и открыть выше стоящий
-          });
-          // console.log('test2');
+                $(isParentBlock.querySelector(".backtitle")).css("display", "flex");
+              } else {
+                $(isParentBlock.querySelector(".backtitle")).css("display") == "none"
+              }
+            } else {
+              $(isParentBlock).prepend(`<li class="backtitle">
+                  <a href="${currentLink}">${currentTitle}</a>
+                  <i class="backicon"></i>
+                  </li>`);
+              let LinksBackTitle = $('.backtitle');
+              for (let i = 0; i < LinksBackTitle.length; i++) {
+                $(LinksBackTitle[i].children[0]).on('click', function (event) {
+                  event.stopPropagation();
+                });
+              }
+            }
+            $(this.parentElement.parentElement).css('visibility', 'hidden');
+            $(this.parentElement.children[1]).css('visibility', 'visible');
+
+            $(".backtitle").on("click", function (event) {
+              event.stopPropagation();
+              let changeItem = this.parentElement.parentElement.querySelector(
+                ".nav-links_item_parent"
+              );
+              $(this.parentElement).removeClass("active");
+              $(changeItem.children[0]).removeClass("active");
+              $(changeItem.children[1]).removeClass("active");
+              $(changeItem.parentElement.parentElement).css('visibility', 'visible')
+
+            });
+          } else {
+            $(".backtitle").css("display", "none");
+          }
+
         });
-
-        // console.log('test1');
       });
 
-
     }
-  } else {
-
   }
 }
 
@@ -165,38 +164,24 @@ $(".sbar").on("click", function () {
     return attr == "How To!" ? null : "How To!";
   });
 
-  let checkOpenSbar = $(this).hasClass("sbar-open");
-  if (!checkOpenSbar) {
-    // console.log("открыт");
-    removeIconEvents();
-    $(".conf-par").toggleClass("over-y");
-    // $(".backtitle").css("display", "none");
-  } else {
-    // console.log("закрыт");
-    addIconEvents();
-    $(".conf-par").toggleClass("over-y");
-    // $(".backtitle").css("display", "flex");
-  }
+  checkOpenSbar();
   changeContent();
 });
-let checkOpenSbar = $(".sbar").hasClass("sbar-open");
 
-if (!checkOpenSbar) {
-  // console.log("открыт");
-  removeIconEvents();
-  $(".conf-par").toggleClass("over-y");
-} else {
-  // console.log("закрыт");
-  addIconEvents();
-  $(".conf-par").toggleClass("over-y");
+
+function checkOpenSbar() {
+  let checkOpenSbar = $(".sbar").hasClass("sbar-open");
+
+  if (!checkOpenSbar) {
+    removeIconEvents();
+    $(".conf-par").toggleClass("over-y");
+  } else {
+    addIconEvents();
+    $(".conf-par").toggleClass("over-y");
+  }
 }
+checkOpenSbar();
 
-
-
-
-// console.log($('.nav-links_item_parent')[0].children[0].on('click',function(event){
-//   event.stopPropagation();
-// }));
 
 function removeIconEvents() {
   $(".getstarted").css("pointer-events", "none");
