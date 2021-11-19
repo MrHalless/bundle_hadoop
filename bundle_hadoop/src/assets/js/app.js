@@ -170,7 +170,17 @@ $(".sbar").on("click", function () {
   $(".howto").attr("data-tooltip", function (index, attr) {
     return attr == "How To!" ? null : "How To!";
   });
+  $('.getstarted').removeClass('active');
+  $('.planningguides').removeClass('active');
+  $('.concepts').removeClass('active');
+  $('.references').removeClass('active');
+  $('.releasenotes').removeClass('active');
+  $('.howto').removeClass('active');
 
+  $('.is_parent').removeClass('active')
+  $('.is_parent').css('visibility', 'visible');
+  // let links = $(".nav-links_item");
+  // removeClassActiveIcon(links);
   checkOpenSbar();
   changeContent();
 });
