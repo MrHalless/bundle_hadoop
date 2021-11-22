@@ -203,12 +203,15 @@ function checkOpenSbar() {
   if (!checkOpenSbar) {
     removeIconEvents();
     $(".conf-par").toggleClass("over-y");
+    $('.sidebar-head').removeClass('close-head');
   } else {
     addIconEvents();
     $(".conf-par").toggleClass("over-y");
+    $('.sidebar-head').addClass('close-head');
   }
 }
 checkOpenSbar();
+
 
 
 function removeIconEvents() {
