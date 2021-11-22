@@ -79,11 +79,13 @@ function changeContent() {
 
     });
 
-    let closeLink = $(".sidebar.close-sm")[0].children[1].children[0].children;
+    // take 2 children in sidebar.close-sm
+    let closeLink = $(".sidebar.close-sm")[0].children[2].children[0].children;
     for (let i = 0; i < closeLink.length; i++) {
       $(closeLink[i]).on("click", function (event) {
+        console.log('test2');
         event.stopPropagation();
-
+        console.log('test2');
 
 
         $(".nav-links_item_parent").on("click", function (event) {
@@ -108,6 +110,7 @@ function changeContent() {
                 $(isParentBlock.querySelector(".backtitle")).css("display") == "none"
               }
             } else {
+              console.log('test');
               $(isParentBlock).prepend(`<li class="backtitle">
                   <a href="${currentLink}">${currentTitle}</a>
                   <i class="backicon"></i>
