@@ -11,7 +11,7 @@
     "footer footer";
 }
 
-.page_nav {
+.article {
   display: grid;
   grid-template-columns: 347px 1fr 183px;
   grid-template-rows: 72px 58px 1fr 468px;
@@ -22,7 +22,7 @@
     "footer footer footer";
 }
 
-.page_nav-sm {
+.article-sm {
   display: grid;
   grid-template-columns: 150px 1fr 183px;
   grid-template-rows: 72px 58px 1fr 468px;
@@ -33,12 +33,12 @@
     "footer footer footer";
 }
 
-.page_nav main {
+.article main {
   margin-left: 20px;
 }
 
 
-.top-nav {
+.header-second {
   display: grid;
   grid-template-columns: 1fr 364px minmax(0, 193px);
 }
@@ -68,6 +68,6 @@ footer {
   grid-area: footer;
 }
 
-.top-nav {
+.header-second {
   grid-area: section;
 }

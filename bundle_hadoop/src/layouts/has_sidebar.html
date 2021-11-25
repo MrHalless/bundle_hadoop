@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    {{> head }}
-  </head>
 
-  <body>
-    <div class="page_nav">
-      <!-- Header -->
-      {{> header }}
-      <!-- navbar -->
-      {{> nav}}
-      <!-- Sidebar -->
-      {{> sidebar}}
-      <!-- right nav -->
-      {{> right-nav}}
-      <!-- Main -->
-      <main class="main" style="color: #fff">
-        <!-- <div class="container"> -->
-        {{> body }}
-        <!-- main -->
-        <!-- </div> -->
-      </main>
-      {{> footer}}
-    </div>
-    <!-- JS -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/highlight.min.js"></script>
-    <script src="assets/js/app.js"></script>
-  </body>
+<head>
+  {{> head }}
+</head>
+
+<body class="article">
+  <!-- <div class="article"> -->
+  <!-- Header -->
+  {{> header }}
+  <!-- navbar -->
+  {{> nav}}
+  <!-- Sidebar -->
+  {{> sidebar}}
+  <!-- right nav -->
+  {{> right-nav}}
+  <!-- Main -->
+  <main class="main" style="color: #fff">
+    <!-- <div class="container"> -->
+    {{> body }}
+    <!-- main -->
+    <!-- </div> -->
+  </main>
+  {{> footer}}
+  <!-- </div> -->
+  <!-- JS -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/highlight.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+
 </html>

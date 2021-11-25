@@ -79,7 +79,7 @@ function changeContent() {
 
     });
 
-    let closeLink = $(".sidebar.close-sm")[0].children[1].children[0].children;
+    let closeLink = $(".sidebar.close-sm")[0].children[2].children[0].children;
     for (let i = 0; i < closeLink.length; i++) {
       $(closeLink[i]).on("click", function (event) {
         event.stopPropagation();
@@ -150,7 +150,7 @@ $(".sbar").on("click", function () {
   closeAllParent();
 
   $("aside").toggleClass("close-sm");
-  $(".page_nav").toggleClass("page_nav-sm");
+  $(".article").toggleClass("article-sm");
   $(".sbar").toggleClass("sbar-open");
   $(".getstarted").attr("data-tooltip", function (index, attr) {
     return attr == "Get started" ? null : "Get started";
