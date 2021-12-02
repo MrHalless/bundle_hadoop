@@ -4,7 +4,17 @@
 .page {
   display: grid;
   grid-template-columns: minmax(70px, 347px) 1fr;
-  grid-template-rows: 72px 1fr 468px;
+  grid-template-rows: 72px 1fr 1fr;
+  grid-template-areas:
+    "header header"
+    "main main"
+    "footer footer";
+}
+
+.home {
+  display: grid;
+  grid-template-columns: minmax(70px, 347px) 1fr;
+  grid-template-rows: 72px minmax(43vh, 1fr) 1fr;
   grid-template-areas:
     "header header"
     "main main"
@@ -14,7 +24,7 @@
 .article {
   display: grid;
   grid-template-columns: 347px 1fr 183px;
-  grid-template-rows: 72px 58px 1fr 468px;
+  grid-template-rows: 72px 58px 1fr 1fr;
   grid-template-areas:
     "header header header"
     "section section section"
@@ -32,6 +42,8 @@
     "aside main right-nav"
     "footer footer footer";
 }
+
+
 
 .article main {
   margin-left: 20px;
@@ -62,6 +74,10 @@ main {
   min-width: 0;
   grid-area: main;
   margin-right: 20px;
+}
+
+.home main {
+  margin-right: 0;
 }
 
 footer {

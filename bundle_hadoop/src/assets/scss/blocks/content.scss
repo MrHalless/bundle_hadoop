@@ -1768,6 +1768,26 @@ span.dmmono {
   background-image: url("/assets/images/chevron-down.svg")
 }
 
+.chevron-footer-right {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  margin-top: 1px;
+  width: 12px;
+  height: 16px;
+  background-image: url("/assets/images/chevron-footer-right.svg")
+}
+
+.chevron-footer-down {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  margin-top: 5px;
+  width: 16px;
+  height: 12px;
+  background-image: url("/assets/images/chevron-footer-down.svg")
+}
+
 .version-chevron {
   margin-right: 8px;
   background-position: center;

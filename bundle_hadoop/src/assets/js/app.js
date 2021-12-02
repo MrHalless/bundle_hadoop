@@ -268,6 +268,13 @@ $(".chevron-lg").on("click", function () {
   $(this).toggleClass("chevron_down-lg");
 });
 
+Array.from(document.querySelectorAll('.chevron-footer-right')).forEach(el => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    el.classList.toggle('chevron-footer-down');
+  })
+})
+
 $(".block-howto-card").on("click", function () {
   console.log($(this.children[0].children[0]));
   $(this.children[0].children[0]).toggleClass("text-green");
@@ -277,6 +284,7 @@ $(".block-howto-card").on("click", function () {
 $(".block-howto-card__text").on("click", function (event) {
   event.stopPropagation();
 });
+
 
 $(".popup-img").magnificPopup({
   type: "image",
