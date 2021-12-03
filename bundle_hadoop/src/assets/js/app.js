@@ -275,6 +275,18 @@ Array.from(document.querySelectorAll('.chevron-footer-right')).forEach(el => {
   })
 })
 
+let navList = document.querySelector(".nav__list");
+let menuOpenBtn = document.querySelector('.nav__burger.open-bar');
+let menuCloseBtn = document.querySelector('.nav__burger.close-bar');
+menuOpenBtn.addEventListener('click', () => {
+  navList.style.left = "0";
+  menuOpenBtn.classList.toggle('show-bar');
+})
+menuCloseBtn.addEventListener('click', () => {
+  navList.style.left = "-100%";
+  menuOpenBtn.classList.toggle('show-bar');
+})
+
 $(".block-howto-card").on("click", function () {
   console.log($(this.children[0].children[0]));
   $(this.children[0].children[0]).toggleClass("text-green");
