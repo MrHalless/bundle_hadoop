@@ -1,6 +1,5 @@
 .nav {
-  background: linear-gradient(157.42deg, #2E2C2D 0%, #27262B 98.49%);
-
+  background: var(--header-bg, linear-gradient(157.42deg, #2E2C2D 0%, #2E2C2D 0%, #2B292C 0.01%, #27262B 98.49%));
   height: 72px;
 
 
@@ -69,7 +68,7 @@
   justify-content: flex-start;
   align-items: center;
   text-decoration: none;
-  color: #FFFFFF;
+  color: var(--text-color-primary, #FCFCFD);
 
   &:hover {
     .nav__link-text {

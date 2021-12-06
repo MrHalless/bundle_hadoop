@@ -324,3 +324,24 @@ setTimeout(() => {
 
 
 
+
+
+
+// theme
+function applyTheme(theme) {
+  document.body.classList.remove("theme-light", "theme-dark");
+  document.body.classList.add(`theme-${theme}`);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const switcher = document.querySelectorAll('.icon-mode');
+  const savedTheme = localStorage.getItem("theme") || "dark";
+
+  applyTheme(savedTheme);
+  [...switcher].forEach((btn) => {
+    btn.addEventListener('click', function () {
+      localStorage.setItem("theme", this.value);
+      applyTheme(this.value);
+    })
+  })
+});

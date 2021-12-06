@@ -6,7 +6,9 @@
   // display: grid;
   // min-height: 0;
   // grid-template-rows: 1fr 80px;
-  background: linear-gradient(157.42deg, #2E2C2D 0%, #27262B 98.49%);
+  // background: linear-gradient(157.42deg, #2E2C2D 0%, #27262B 98.49%);
+
+  background: var(--footer-bg);
 }
 
 .footer-page__info {
@@ -188,7 +190,7 @@
 
   margin-bottom: 20px;
   text-decoration: none;
-  color: #FCFCFD;
+  color: var(--text-color-primary, #FCFCFD);
 }
 
 .footer-page-link-head__body>a:hover {

@@ -1,3 +1,34 @@
+:root {
+
+  --theme-color: #efefef;
+  --primary-color: #000e29;
+  --footer-bg: linear-gradient(157.42deg, #2E2C2D 0%, #2E2C2D 0%, #2B292C 0.01%, #27262B 98.49%);
+  --primary-green: #00D2A0;
+  --icon-sun-color: #7F7F7F;
+  --icon-moon-color: #00D2A0;
+  --text-color-primary: #FCFCFD;
+  --header-bg: linear-gradient(157.42deg, #2E2C2D 0%, #2E2C2D 0%, #2B292C 0.01%, #27262B 98.49%);
+}
+
+body.theme-dark {
+  --footer-bg: linear-gradient(157.42deg, #2E2C2D 0%, #2E2C2D 0%, #2B292C 0.01%, #27262B 98.49%);
+  --icon-sun-color: #7F7F7F;
+  --icon-moon-color: #00D2A0;
+  --text-color-primary: #FCFCFD;
+  --header-bg: linear-gradient(157.42deg, #2E2C2D 0%, #2E2C2D 0%, #2B292C 0.01%, #27262B 98.49%);
+}
+
+body.theme-light {
+  --footer-bg: #F2FBFF;
+  --icon-sun-color: #00D2A0;
+  --icon-moon-color: #7F7F7F;
+  --text-color-primary: #353E47;
+  --header-bg: #FFFFFF;
+}
+
+
+
+
 @import "fonts/f.scss";
 @import "blocks/bootstrap.scss";
 @import "blocks/css-tooltip.scss";
@@ -14,6 +45,7 @@
 body {
   background-color: #212121;
   font-family: "DMSans";
+  transition: 1s ease-in;
 }
 
 *,
@@ -32,10 +64,7 @@ a:active {
   outline: none;
 }
 
-// a:active,
-// a:focus {
-//   // outline: none;
-// }
+
 
 /* Blocks */
 @import "blocks/page";
